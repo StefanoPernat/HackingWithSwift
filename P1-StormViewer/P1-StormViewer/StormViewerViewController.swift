@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StormViewerViewController: UIViewController {
+class StormViewerViewController: UITableViewController {
 
     var pictures = [String]()
     
