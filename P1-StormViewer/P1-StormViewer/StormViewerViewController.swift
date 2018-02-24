@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StormViewerViewController.swift
 //  P1-StormViewer
 //
 //  Created by Stefano Pernat on 24/02/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StormViewerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
