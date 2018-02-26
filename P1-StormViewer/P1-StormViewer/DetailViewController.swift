@@ -10,8 +10,13 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    // - MARK: IBOutlet
     @IBOutlet weak var imageView: UIImageView!
     
+    // - MARK: Properties
+    var selectedImage: String?
+    
+    // - MARK: ViewController callbacks
     override func viewDidLoad() {
         super.viewDidLoad()
 
