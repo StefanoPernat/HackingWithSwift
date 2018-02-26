@@ -19,6 +19,8 @@ class DetailViewController: UIViewController {
     // - MARK: ViewController callbacks
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = selectedImage
 
         if let imageToLoad = selectedImage {
             imageView.image = UIImage(named: imageToLoad)
