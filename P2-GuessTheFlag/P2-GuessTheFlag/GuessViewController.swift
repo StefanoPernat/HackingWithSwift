@@ -21,6 +21,7 @@ class GuessViewController: UIViewController {
         "estonia", "france", "germany", "ireland", "italy", "monaco",
         "nigeria", "poland", "russia", "spain", "uk", "us"
     ]
+    var correctAnswer = 0
     var score = 0
     
     // - MARK: ViewController callback methods
@@ -39,6 +40,7 @@ class GuessViewController: UIViewController {
     // - MARK: functions
     func askQuestion() {
         countries = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: countries) as! [String]
+        correctAnswer = GKRandomSource.sharedRandom().nextInt(upperBound: 3)
         
         firstFlag.setImage(UIImage(named: countries[0]), for: .normal)
         secondFlag.setImage(UIImage(named: countries[1]), for: .normal)
