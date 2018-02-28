@@ -10,13 +10,23 @@ import UIKit
 
 class GuessViewController: UIViewController {
 
+    // - MARK: Outlets
     @IBOutlet weak var firstFlag: UIButton!
     @IBOutlet weak var secondFlag: UIButton!
     @IBOutlet weak var thirdFlag: UIButton!
     
+    // - MARK: Properties
+    let countries = [
+        "estonia", "france", "germany", "ireland", "italy", "monaco",
+        "nigeria", "poland", "russia", "spain", "uk", "us"
+    ]
+    var score = 0
+    
+    // - MARK: ViewController callback methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        askQuestion()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +34,11 @@ class GuessViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    // - MARK: functions
+    func askQuestion() {
+        firstFlag.setImage(UIImage(named: countries[0]), for: .normal)
+        secondFlag.setImage(UIImage(named: countries[1]), for: .normal)
+        thirdFlag.setImage(UIImage(named: countries[2]), for: .normal)
+    }
 }
 
