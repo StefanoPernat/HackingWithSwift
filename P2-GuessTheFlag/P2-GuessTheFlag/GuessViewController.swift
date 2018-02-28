@@ -42,6 +42,8 @@ class GuessViewController: UIViewController {
         countries = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: countries) as! [String]
         correctAnswer = GKRandomSource.sharedRandom().nextInt(upperBound: 3)
         
+        title = countries[correctAnswer].uppercased()
+        
         firstFlag.setImage(UIImage(named: countries[0]), for: .normal)
         secondFlag.setImage(UIImage(named: countries[1]), for: .normal)
         thirdFlag.setImage(UIImage(named: countries[2]), for: .normal)
