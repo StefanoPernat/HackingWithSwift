@@ -26,6 +26,7 @@ class GuessViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        setFlagsAppearance(with: UIColor.lightGray)
         askQuestion()
     }
 
@@ -39,6 +40,16 @@ class GuessViewController: UIViewController {
         firstFlag.setImage(UIImage(named: countries[0]), for: .normal)
         secondFlag.setImage(UIImage(named: countries[1]), for: .normal)
         thirdFlag.setImage(UIImage(named: countries[2]), for: .normal)
+    }
+    
+    func setFlagsAppearance(with color: UIColor) {
+        firstFlag.layer.borderWidth     = 1
+        secondFlag.layer.borderWidth    = 1
+        thirdFlag.layer.borderWidth     = 1
+        
+        firstFlag.layer.borderColor     = color.cgColor
+        secondFlag.layer.borderColor    = color.cgColor
+        thirdFlag.layer.borderColor     = color.cgColor
     }
 }
 
