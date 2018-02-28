@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameplayKit
 
 class GuessViewController: UIViewController {
 
@@ -16,7 +17,7 @@ class GuessViewController: UIViewController {
     @IBOutlet weak var thirdFlag: UIButton!
     
     // - MARK: Properties
-    let countries = [
+    var countries = [
         "estonia", "france", "germany", "ireland", "italy", "monaco",
         "nigeria", "poland", "russia", "spain", "uk", "us"
     ]
@@ -37,6 +38,8 @@ class GuessViewController: UIViewController {
 
     // - MARK: functions
     func askQuestion() {
+        countries = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: countries) as! [String]
+        
         firstFlag.setImage(UIImage(named: countries[0]), for: .normal)
         secondFlag.setImage(UIImage(named: countries[1]), for: .normal)
         thirdFlag.setImage(UIImage(named: countries[2]), for: .normal)
