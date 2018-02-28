@@ -37,6 +37,19 @@ class GuessViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // - MARK: IBActions
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        if sender.tag == correctAnswer {
+            score += 1
+            title = "Correct"
+        } else {
+            score -= 1
+            title = "Wrong"
+        }
+        
+        print(score)
+    }
+    
     // - MARK: functions
     func askQuestion() {
         countries = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: countries) as! [String]
