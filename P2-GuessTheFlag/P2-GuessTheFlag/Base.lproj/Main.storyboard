@@ -39,14 +39,23 @@
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oaw-nk-YpA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voK-oc-uD4">
+                                <rect key="frame" x="0.0" y="646" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="voK-oc-uD4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Yy-uB-IjE"/>
                             <constraint firstItem="3Js-Zx-p1w" firstAttribute="centerX" secondItem="eMw-vc-GnT" secondAttribute="centerX" id="2sr-tF-nAc"/>
                             <constraint firstItem="eMw-vc-GnT" firstAttribute="centerX" secondItem="JTq-Zg-PhD" secondAttribute="centerX" id="L1u-fP-hcd"/>
                             <constraint firstItem="JTq-Zg-PhD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XG0-n1-13F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="voK-oc-uD4" secondAttribute="trailing" id="dbV-6V-qUP"/>
                             <constraint firstItem="eMw-vc-GnT" firstAttribute="top" secondItem="JTq-Zg-PhD" secondAttribute="bottom" constant="30" id="ek8-fl-i8B"/>
                             <constraint firstItem="3Js-Zx-p1w" firstAttribute="top" secondItem="eMw-vc-GnT" secondAttribute="bottom" constant="30" id="hgf-1w-LRt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="voK-oc-uD4" secondAttribute="bottom" id="s3H-qQ-vDc"/>
                             <constraint firstItem="JTq-Zg-PhD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="yzb-Mw-BYe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -54,6 +63,7 @@
                     <navigationItem key="navigationItem" id="PaE-eu-Sl9"/>
                     <connections>
                         <outlet property="firstFlag" destination="JTq-Zg-PhD" id="SWy-Yc-x3a"/>
+                        <outlet property="scoreLabel" destination="voK-oc-uD4" id="CEN-bU-XrT"/>
                         <outlet property="secondFlag" destination="eMw-vc-GnT" id="djv-6M-hbX"/>
                         <outlet property="thirdFlag" destination="3Js-Zx-p1w" id="46A-sR-bXZ"/>
                     </connections>

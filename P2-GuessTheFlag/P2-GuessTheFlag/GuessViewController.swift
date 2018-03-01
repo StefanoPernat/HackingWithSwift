@@ -16,6 +16,8 @@ class GuessViewController: UIViewController {
     @IBOutlet weak var secondFlag: UIButton!
     @IBOutlet weak var thirdFlag: UIButton!
     
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     // - MARK: Properties
     var countries = [
         "estonia", "france", "germany", "ireland", "italy", "monaco",
@@ -30,6 +32,7 @@ class GuessViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         setFlagsAppearance(with: UIColor.lightGray)
         askQuestion()
+        scoreLabel.text = "Score: \(score)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,10 +50,12 @@ class GuessViewController: UIViewController {
             title = "Wrong"
         }
         
-        let scoreAlert = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+        /*let scoreAlert = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
         scoreAlert.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         
-        present(scoreAlert, animated: true)
+        present(scoreAlert, animated: true)*/
+        
+        
     }
     
     // - MARK: functions
