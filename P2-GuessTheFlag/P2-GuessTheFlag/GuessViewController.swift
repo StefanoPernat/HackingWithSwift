@@ -55,9 +55,14 @@ class GuessViewController: UIViewController {
         
         present(scoreAlert, animated: true)*/
         
-        scoreLabel.text = "Score: \(score)"
-        
-        askQuestion()
+        if score < 0 {  // force new game
+            let gameFinishedAlert = UIAlertController(title: title, message: "You lost", preferredStyle: .alert)
+            gameFinishedAlert.addAction(UIAlertAction(title: "New Game", style: .default, handler: newGame))
+            present(gameFinishedAlert, animated: true, completion: nil)
+        } else {
+            scoreLabel.text = "Score: \(score)"
+            askQuestion()
+        }
     }
     
     // - MARK: functions
@@ -80,6 +85,12 @@ class GuessViewController: UIViewController {
         firstFlag.layer.borderColor     = color.cgColor
         secondFlag.layer.borderColor    = color.cgColor
         thirdFlag.layer.borderColor     = color.cgColor
+    }
+    
+    func newGame(action: UIAlertAction! = nil) {
+        score = 0
+        scoreLabel.text = "Score: \(score)"
+        askQuestion()
     }
 }
 
