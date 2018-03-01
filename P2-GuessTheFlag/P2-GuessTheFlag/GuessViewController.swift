@@ -55,7 +55,9 @@ class GuessViewController: UIViewController {
         
         present(scoreAlert, animated: true)*/
         
+        scoreLabel.text = "Score: \(score)"
         
+        askQuestion()
     }
     
     // - MARK: functions
