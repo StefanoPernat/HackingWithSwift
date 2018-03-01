@@ -47,11 +47,14 @@ class GuessViewController: UIViewController {
             title = "Wrong"
         }
         
-        print(score)
+        let scoreAlert = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+        scoreAlert.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+        
+        present(scoreAlert, animated: true)
     }
     
     // - MARK: functions
-    func askQuestion() {
+    func askQuestion(action: UIAlertAction! = nil) {
         countries = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: countries) as! [String]
         correctAnswer = GKRandomSource.sharedRandom().nextInt(upperBound: 3)
         
