@@ -18,3 +18,7 @@ Used AlertController to show the score
 #### Project II - Edits
 
 I decided to update Paul Hudson's Project II displaying the score with a label and preventing the score to be negative, forcing a new game (reset score to 0)
+
+## Project III: Social Media
+
+Learned to create BarButtonItem inside navigationBar, implement basic sharing functionality with UIActivityViewController
