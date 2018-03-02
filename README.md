@@ -22,3 +22,5 @@ I decided to update Paul Hudson's Project II displaying the score with a label a
 ## Project III: Social Media
 
 Learned to create BarButtonItem inside navigationBar, implement basic sharing functionality with UIActivityViewController
+
+## Project IV: Easy Browser
