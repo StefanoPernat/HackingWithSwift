@@ -24,7 +24,7 @@ class BrowserController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         
         let url = URL(string: "https://www.hackingwithswift.com")!
         webView.load(URLRequest(url: url))
@@ -37,13 +37,13 @@ class BrowserController: UIViewController {
     }
     
     // - MARK: methods
-    func openTapped() {
+    @objc func openTapped() {
         let websiteSelectionAlertController = UIAlertController(title: "Open page...", message: nil, preferredStyle: .actionSheet)
         
         websiteSelectionAlertController.addAction(UIAlertAction(title: "apple.com", style: .default, handler: nil))
         websiteSelectionAlertController.addAction(UIAlertAction(title: "hackingwithswift.com", style: .default, handler: nil))
         websiteSelectionAlertController.addAction(UIAlertAction(title: "Learning Rust", style: .default, handler: nil))
-        websiteSelectionAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        websiteSelectionAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         present(websiteSelectionAlertController, animated: true, completion: nil)
     }
