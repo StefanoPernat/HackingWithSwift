@@ -36,3 +36,5 @@ Most important thing: I learned a little bit of KVO adding an observer to observ
 #### Project IV - Future edits
 
 Add the option to load the list of website from a file
+
+## Project V: Word Scramble
