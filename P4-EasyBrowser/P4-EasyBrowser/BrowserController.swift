@@ -14,6 +14,7 @@ class BrowserController: UIViewController {
     // MARK: - Properties
     var webView: WKWebView!
     var progressView: UIProgressView!
+    var websites = ["apple.com", "hackingwithswift.com", "learning-rust.github.io"]
     
     // MARK: - ViewController callbacks
     override func loadView() {
@@ -40,7 +41,7 @@ class BrowserController: UIViewController {
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
-        let url = URL(string: "https://www.hackingwithswift.com")!
+        let url = URL(string: "https://\(websites[0])")!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
     }
@@ -61,29 +62,38 @@ class BrowserController: UIViewController {
     @objc func openTapped() {
         let websiteSelectionAlertController = UIAlertController(title: "Open page...", message: nil, preferredStyle: .actionSheet)
         
-        websiteSelectionAlertController.addAction(UIAlertAction(title: "apple.com", style: .default, handler: openPage))
-        websiteSelectionAlertController.addAction(UIAlertAction(title: "hackingwithswift.com", style: .default, handler: openPage))
-        websiteSelectionAlertController.addAction(UIAlertAction(title: "Learning Rust", style: .default, handler: openPage))
+        for website in websites {
+            websiteSelectionAlertController.addAction(UIAlertAction(title: website, style: .default, handler: openPage))
+        }
         websiteSelectionAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        
         websiteSelectionAlertController.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
         
         present(websiteSelectionAlertController, animated: true, completion: nil)
     }
     
     func openPage(action: UIAlertAction) {
-        if action.title?.lowercased() == "learning rust" {
-            let url = URL(string: "https://learning-rust.github.io")!
-            webView.load(URLRequest(url: url))
-        } else {
-            let url = URL(string: "https://\(action.title!)")!
-            webView.load(URLRequest(url: url))
-        }
+        let url = URL(string: "https://\(action.title!)")!
+        webView.load(URLRequest(url: url))
     }
 }
 
 extension BrowserController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         title = webView.title
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        let url = navigationAction.request.url
+        
+        if let host = url?.host {
+            for website in websites {
+                if host.range(of: website) != nil {
+                    decisionHandler(.allow)
+                    return
+                }
+            }
+        }
+        
+        decisionHandler(.cancel)
     }
 }
