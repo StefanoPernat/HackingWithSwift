@@ -62,5 +62,7 @@ class BrowserController: UIViewController {
 }
 
 extension BrowserController: WKNavigationDelegate {
-    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        title = webView.title
+    }
 }
