@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+class BrowserController: UIViewController {
 
     // MARK: - Properties
     var webView: WKWebView!
