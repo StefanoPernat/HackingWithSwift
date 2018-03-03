@@ -25,14 +25,14 @@ Learned to create BarButtonItem inside navigationBar, implement basic sharing fu
 
 ## Project IV: Easy Browser
 
-I used WebKit framework implmenting new VKWebView, implemented also some WKNavigationDelegate methods.  
+I used WebKit framework implmenting new WKWebView, implemented also some WKNavigationDelegate methods.  
   
 Used also a lot of other classes like URL, URLRequest, UIToolbar, UIProgressView and a lot more...  
   
-Most important thing: I learned a little bit of KVO adding an observer to observe VKWebView estimatedProgress property. Implemented observeValue method.
+Most important thing: I learned a little bit of KVO adding an observer to observe WKWebView estimatedProgress property. Implemented observeValue method.
 
 > Remember to delete the observer once is not used, in this case not needed because I had only one VC, in case of a more complex app this is mandatory
 
 #### Project IV - Future edits
 
-add the option to load the list of website from a file
+Add the option to load the list of website from a file
