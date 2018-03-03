@@ -24,3 +24,15 @@ I decided to update Paul Hudson's Project II displaying the score with a label a
 Learned to create BarButtonItem inside navigationBar, implement basic sharing functionality with UIActivityViewController
 
 ## Project IV: Easy Browser
+
+I used WebKit framework implmenting new VKWebView, implemented also some WKNavigationDelegate methods.  
+  
+Used also a lot of other classes like URL, URLRequest, UIToolbar, UIProgressView and a lot more...  
+  
+Most important thing: I learned a little bit of KVO adding an observer to observe VKWebView estimatedProgress property. Implemented observeValue method.
+
+> Remember to delete the observer once is not used, in this case not needed because I had only one VC, in case of a more complex app this is mandatory
+
+#### Project IV - Future edits
+
+add the option to load the list of website from a file
