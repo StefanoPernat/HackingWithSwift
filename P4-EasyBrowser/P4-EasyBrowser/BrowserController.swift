@@ -23,12 +23,29 @@ class BrowserController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
+        let url = URL(string: "https://www.hackingwithswift.com")!
+        webView.load(URLRequest(url: url))
+        webView.allowsBackForwardNavigationGestures = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // - MARK: methods
+    func openTapped() {
+        let websiteSelectionAlertController = UIAlertController(title: "Open page...", message: nil, preferredStyle: .actionSheet)
+        
+        websiteSelectionAlertController.addAction(UIAlertAction(title: "apple.com", style: .default, handler: nil))
+        websiteSelectionAlertController.addAction(UIAlertAction(title: "hackingwithswift.com", style: .default, handler: nil))
+        websiteSelectionAlertController.addAction(UIAlertAction(title: "Learning Rust", style: .default, handler: nil))
+        websiteSelectionAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(websiteSelectionAlertController, animated: true, completion: nil)
     }
 }
 
