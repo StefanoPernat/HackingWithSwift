@@ -45,6 +45,8 @@ class BrowserController: UIViewController {
         websiteSelectionAlertController.addAction(UIAlertAction(title: "Learning Rust", style: .default, handler: nil))
         websiteSelectionAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
+        websiteSelectionAlertController.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
+        
         present(websiteSelectionAlertController, animated: true, completion: nil)
     }
 }
