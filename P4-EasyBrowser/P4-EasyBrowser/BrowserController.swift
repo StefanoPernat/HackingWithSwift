@@ -40,14 +40,24 @@ class BrowserController: UIViewController {
     @objc func openTapped() {
         let websiteSelectionAlertController = UIAlertController(title: "Open page...", message: nil, preferredStyle: .actionSheet)
         
-        websiteSelectionAlertController.addAction(UIAlertAction(title: "apple.com", style: .default, handler: nil))
-        websiteSelectionAlertController.addAction(UIAlertAction(title: "hackingwithswift.com", style: .default, handler: nil))
-        websiteSelectionAlertController.addAction(UIAlertAction(title: "Learning Rust", style: .default, handler: nil))
+        websiteSelectionAlertController.addAction(UIAlertAction(title: "apple.com", style: .default, handler: openPage))
+        websiteSelectionAlertController.addAction(UIAlertAction(title: "hackingwithswift.com", style: .default, handler: openPage))
+        websiteSelectionAlertController.addAction(UIAlertAction(title: "Learning Rust", style: .default, handler: openPage))
         websiteSelectionAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         websiteSelectionAlertController.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
         
         present(websiteSelectionAlertController, animated: true, completion: nil)
+    }
+    
+    func openPage(action: UIAlertAction) {
+        if action.title?.lowercased() == "learning rust" {
+            let url = URL(string: "https://learning-rust.github.io")!
+            webView.load(URLRequest(url: url))
+        } else {
+            let url = URL(string: "https://\(action.title!)")!
+            webView.load(URLRequest(url: url))
+        }
     }
 }
 
