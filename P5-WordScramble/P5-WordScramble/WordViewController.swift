@@ -10,6 +10,11 @@ import UIKit
 
 class WordViewController: UITableViewController {
 
+    // - MARK: Properties
+    var allWords = [String]()
+    var usedWords = [String]()
+    
+    // - MARK: View Controller callbacks
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
