@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameplayKit
 
 class WordViewController: UITableViewController {
 
@@ -19,6 +20,7 @@ class WordViewController: UITableViewController {
         super.viewDidLoad()
         
         readAllWords()
+        startGame()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +37,13 @@ class WordViewController: UITableViewController {
                 allWords = ["silkworm"]
             }
         }
+    }
+    
+    func startGame() {
+        allWords = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: allWords) as! [String]
+        title = allWords[0]
+        usedWords.removeAll(keepingCapacity: true)
+        tableView.reloadData()
     }
 }
 
