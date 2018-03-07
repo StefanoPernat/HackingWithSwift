@@ -61,6 +61,16 @@ class WordViewController: UITableViewController {
     }
     
     func isPossible(word: String) -> Bool {
+        var tempWord = title!.lowercased()
+        
+        for letter in word {
+            if let pos = tempWord.range(of: String(letter)) {
+                tempWord.remove(at: pos.lowerBound)
+            } else {
+                return false
+            }
+        }
+        
         return true
     }
     
