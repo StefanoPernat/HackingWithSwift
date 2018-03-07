@@ -73,7 +73,16 @@ class WordViewController: UITableViewController {
     }
     
     func submit(answer: String) {
+        let lowerCasedAnswer = answer.lowercased()
         
+        if isPossible(word: lowerCasedAnswer)  {
+            if isOriginal(word: lowerCasedAnswer) {
+                if isReal(word: lowerCasedAnswer) {
+                    usedWords.insert(answer, at: 0)
+                    tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+                }
+            }
+        }
     }
     
     @objc func promptForAnswer() {
