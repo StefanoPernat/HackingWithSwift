@@ -38,3 +38,19 @@ Most important thing: I learned a little bit of KVO adding an observer to observ
 Add the option to load the list of website from a file
 
 ## Project V: Word Scramble
+
+Learned a little bit more about UITableView, how to reload data and how to insert rows.  
+  
+Learned also how to add text field to UIAlertController  
+  
+Used trailing closures and learned a little bit about capturing values,  
+used also NSRange  
+
+#### Project V Future edits
+
+- Disallow answer that are shorter than 3 letters
+- Implement showErrorMessage() instead of else branches in submit
+- Disallow answer that are the start word
+- Fix start loading code if it fails to generate the string using contentOfFile
+- Make a new loadDefaultWords
+- Make the game shuffle only once then use an increasing integer property to read different words
