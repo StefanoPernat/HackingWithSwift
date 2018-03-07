@@ -60,6 +60,18 @@ class WordViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    func isPossible(word: String) -> Bool {
+        return true
+    }
+    
+    func isOriginal(word: String) -> Bool {
+        return true
+    }
+    
+    func isReal(word: String) -> Bool {
+        return true
+    }
+    
     func submit(answer: String) {
         
     }
