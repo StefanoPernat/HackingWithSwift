@@ -19,6 +19,8 @@ class WordViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer))
+        
         readAllWords()
         startGame()
     }
@@ -56,5 +58,23 @@ class WordViewController: UITableViewController {
         title = allWords[0]
         usedWords.removeAll(keepingCapacity: true)
         tableView.reloadData()
+    }
+    
+    func submit(answer: String) {
+        
+    }
+    
+    @objc func promptForAnswer() {
+        let answerAlertController = UIAlertController(title: "Enter answer", message: nil, preferredStyle: .alert)
+        answerAlertController.addTextField()
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) {
+            [unowned self, answerAlertController] _ in
+            let answer = answerAlertController.textFields![0]
+            self.submit(answer: answer.text!)
+        }
+        
+        answerAlertController.addAction(submitAction)
+        present(answerAlertController, animated: true)
     }
 }
