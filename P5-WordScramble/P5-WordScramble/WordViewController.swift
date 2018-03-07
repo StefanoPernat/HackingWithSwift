@@ -88,15 +88,31 @@ class WordViewController: UITableViewController {
     
     func submit(answer: String) {
         let lowerCasedAnswer = answer.lowercased()
+        let errorTitle: String
+        let errorMessage: String
         
         if isPossible(word: lowerCasedAnswer)  {
             if isOriginal(word: lowerCasedAnswer) {
                 if isReal(word: lowerCasedAnswer) {
                     usedWords.insert(answer, at: 0)
                     tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+                    return
+                } else {
+                    errorTitle = "Word not recognised"
+                    errorMessage = "You can't just make them up, you know!"
                 }
+            } else {
+                errorTitle = "Word used already"
+                errorMessage = "Be more original!"
             }
+        } else {
+            errorTitle = "Word not possible"
+            errorMessage = "You can't spell that word from '\(title!.lowercased())'!"
         }
+        
+        let errorAlertController = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
+        errorAlertController.addAction(UIAlertAction(title: "OK", style: .default))
+        present(errorAlertController, animated: true)
     }
     
     @objc func promptForAnswer() {
