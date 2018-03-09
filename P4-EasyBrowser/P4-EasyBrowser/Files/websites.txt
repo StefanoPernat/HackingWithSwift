@@ -1,6 +1,6 @@
 apple.com
 hackingwithswift.com
 learning-rust.github.io
-nbareligion.com
+github.com
 bignerdranch.com
 marvel.com

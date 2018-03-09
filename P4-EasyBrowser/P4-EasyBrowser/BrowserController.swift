@@ -14,7 +14,7 @@ class BrowserController: UIViewController {
     // MARK: - Properties
     var webView: WKWebView!
     var progressView: UIProgressView!
-    var websites = ["apple.com", "hackingwithswift.com", "learning-rust.github.io"]
+    var websites = [String]()
     
     // MARK: - ViewController callbacks
     override func loadView() {
@@ -25,6 +25,8 @@ class BrowserController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadWebsites()
         
         // set buttons
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
@@ -74,6 +76,17 @@ class BrowserController: UIViewController {
     func openPage(action: UIAlertAction) {
         let url = URL(string: "https://\(action.title!)")!
         webView.load(URLRequest(url: url))
+    }
+    
+    func loadWebsites() {
+        let websitesPath = Bundle.main.path(forResource: "websites", ofType: "txt")
+        
+        if let allowedWebsites = try? String(contentsOfFile: websitesPath!) {
+            websites = allowedWebsites.components(separatedBy: "\n")
+        } else {
+            websites = ["apple.com", "hackingwithswift.com", "learning-rust.github.io"]
+        }
+        
     }
 }
 
