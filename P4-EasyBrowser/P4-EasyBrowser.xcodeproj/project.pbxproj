@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		203DF1FA20531185002210F5 /* websites.txt in Resources */ = {isa = PBXBuildFile; fileRef = 203DF1F920531185002210F5 /* websites.txt */; };
 		207AB3842049DDC10062CCD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207AB3832049DDC10062CCD8 /* AppDelegate.swift */; };
 		207AB3862049DDC10062CCD8 /* BrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207AB3852049DDC10062CCD8 /* BrowserController.swift */; };
 		207AB3892049DDC10062CCD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 207AB3872049DDC10062CCD8 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		203DF1F920531185002210F5 /* websites.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = websites.txt; sourceTree = "<group>"; };
 		207AB3802049DDC10062CCD8 /* P4-EasyBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P4-EasyBrowser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		207AB3832049DDC10062CCD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		207AB3852049DDC10062CCD8 /* BrowserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		203DF1F820531177002210F5 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				203DF1F920531185002210F5 /* websites.txt */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 		207AB3772049DDC10062CCD8 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 		207AB3822049DDC10062CCD8 /* P4-EasyBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				203DF1F820531177002210F5 /* Files */,
 				207AB3832049DDC10062CCD8 /* AppDelegate.swift */,
 				207AB3852049DDC10062CCD8 /* BrowserController.swift */,
 				207AB3872049DDC10062CCD8 /* Main.storyboard */,
@@ -123,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				203DF1FA20531185002210F5 /* websites.txt in Resources */,
 				207AB38E2049DDC10062CCD8 /* LaunchScreen.storyboard in Resources */,
 				207AB38B2049DDC10062CCD8 /* Assets.xcassets in Resources */,
 				207AB3892049DDC10062CCD8 /* Main.storyboard in Resources */,
