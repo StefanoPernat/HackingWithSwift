@@ -33,9 +33,9 @@ Most important thing: I learned a little bit of KVO adding an observer to observ
 
 > Remember to delete the observer once is not used, in this case not needed because I had only one VC, in case of a more complex app this is mandatory
 
-#### Project IV - Future edits
+#### Project IV - Edits
 
-Add the option to load the list of website from a file
+- [x] Loaded the list of website from a file
 
 ## Project V: Word Scramble
 
