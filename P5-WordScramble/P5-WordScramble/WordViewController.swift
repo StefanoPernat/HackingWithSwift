@@ -7,7 +7,8 @@
 //
 
 // EDITS
-// 1    Disallow Answer that are shorter than 3 letters, or empty string
+// 1    Disallow Answer that are shorter than 3 letters, or empty string [OK]
+// 2    Refactor else statements that shows errors to user using a function (showError) [OK]
 
 import UIKit
 import GameplayKit
@@ -95,8 +96,6 @@ class WordViewController: UITableViewController {
     
     func submit(answer: String) {
         let lowerCasedAnswer = answer.lowercased()
-        let errorTitle: String
-        let errorMessage: String
         
         if isPossible(word: lowerCasedAnswer)  {
             if isOriginal(word: lowerCasedAnswer) {
@@ -105,21 +104,14 @@ class WordViewController: UITableViewController {
                     tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
                     return
                 } else {
-                    errorTitle = "Word not recognised"
-                    errorMessage = "You can't just make them up, you know!"
+                    showError(withMessage: "You can't just make them up, you know!", andTitle: "Word not recognised")
                 }
             } else {
-                errorTitle = "Word used already"
-                errorMessage = "Be more original!"
+                showError(withMessage: "Be more original!", andTitle: "Word used already")
             }
         } else {
-            errorTitle = "Word not possible"
-            errorMessage = "You can't spell that word from '\(title!.lowercased())'!"
+            showError(withMessage: "You can't spell that word from '\(title!.lowercased())'!", andTitle: "Word not possible")
         }
-        
-        let errorAlertController = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
-        errorAlertController.addAction(UIAlertAction(title: "OK", style: .default))
-        present(errorAlertController, animated: true)
     }
     
     @objc func promptForAnswer() {
@@ -134,5 +126,11 @@ class WordViewController: UITableViewController {
         
         answerAlertController.addAction(submitAction)
         present(answerAlertController, animated: true)
+    }
+    
+    func showError(withMessage message: String, andTitle title: String) {
+        let showErrorAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        showErrorAlertController.addAction(UIAlertAction(title: "OK", style: .default))
+        present(showErrorAlertController, animated: true)
     }
 }
