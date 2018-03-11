@@ -9,7 +9,8 @@
 // EDITS
 // 1    Disallow Answer that are shorter than 3 letters, or empty string [OK]
 // 2    Refactor else statements that shows errors to user using a function (showError) [OK]
-// 3    Disallow Answer that are the start word
+// 3    Disallow Answer that are the start word [OK]
+// 4    Implement loadDefaultWords and fix readAllWords [OK]
 
 import UIKit
 import GameplayKit
@@ -53,9 +54,15 @@ class WordViewController: UITableViewController {
             if let startWords = try? String(contentsOfFile: startWordsPath) {
                 allWords = startWords.components(separatedBy: "\n")
             } else {
-                allWords = ["silkworm"]
+                loadDefaultWords()
             }
+        } else {
+            loadDefaultWords()
         }
+    }
+    
+    func loadDefaultWords() {
+        allWords = ["silkworm"]
     }
     
     func startGame() {
