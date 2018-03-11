@@ -48,9 +48,9 @@ used also NSRange
 
 #### Project V Future edits
 
-- Disallow answer that are shorter than 3 letters
-- Implement showErrorMessage() instead of else branches in submit
-- Disallow answer that are the start word
-- Fix start loading code if it fails to generate the string using contentOfFile
-- Make a new loadDefaultWords
-- Make the game shuffle only once then use an increasing integer property to read different words
+- [x] Disallow answer that are shorter than 3 letters
+- [x] Implement showErrorMessage() instead of else branches in submit
+- [x] Disallow answer that are the start word
+- [x] Fix start loading code if it fails to generate the string using contentOfFile
+- [x] Make a new loadDefaultWords
+- [x] Make the game shuffle only once then use an increasing integer property to read different words
