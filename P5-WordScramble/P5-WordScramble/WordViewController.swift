@@ -7,10 +7,11 @@
 //
 
 // EDITS
-// 1    Disallow Answer that are shorter than 3 letters, or empty string [OK]
-// 2    Refactor else statements that shows errors to user using a function (showError) [OK]
-// 3    Disallow Answer that are the start word [OK]
-// 4    Implement loadDefaultWords and fix readAllWords [OK]
+// 1    Disallow Answer that are shorter than 3 letters, or empty string                                    [OK]
+// 2    Refactor else statements that shows errors to user using a function (showError)                     [OK]
+// 3    Disallow Answer that are the start word                                                             [OK]
+// 4    Implement loadDefaultWords and fix readAllWords                                                     [OK]
+// 5    Make the game shuffle only once and choose the word with an int every time start game is called
 
 import UIKit
 import GameplayKit
@@ -20,14 +21,17 @@ class WordViewController: UITableViewController {
     // - MARK: Properties
     var allWords = [String]()
     var usedWords = [String]()
+    var wordIndex = 0
     
     // - MARK: View Controller callbacks
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(startGame))
         
         readAllWords()
+        allWords = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: allWords) as! [String]
         startGame()
     }
 
@@ -65,11 +69,15 @@ class WordViewController: UITableViewController {
         allWords = ["silkworm"]
     }
     
-    func startGame() {
-        allWords = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: allWords) as! [String]
-        title = allWords[0]
+    @objc func startGame() {
+        if wordIndex >= allWords.count  {
+            allWords = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: allWords) as! [String]
+            wordIndex = 0
+        }
+        title = allWords[wordIndex]
         usedWords.removeAll(keepingCapacity: true)
         tableView.reloadData()
+        wordIndex += 1
     }
     
     func isPossible(word: String) -> Bool {
