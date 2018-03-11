@@ -9,6 +9,7 @@
 // EDITS
 // 1    Disallow Answer that are shorter than 3 letters, or empty string [OK]
 // 2    Refactor else statements that shows errors to user using a function (showError) [OK]
+// 3    Disallow Answer that are the start word
 
 import UIKit
 import GameplayKit
@@ -83,7 +84,7 @@ class WordViewController: UITableViewController {
     }
     
     func isReal(word: String) -> Bool {
-        if word == "" || word.count < 3{
+        if word == "" || word.count < 3 || word == title!.lowercased() {
             return false
         }
         
