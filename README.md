@@ -54,3 +54,5 @@ used also NSRange
 - [x] Fix start loading code if it fails to generate the string using contentOfFile
 - [x] Make a new loadDefaultWords
 - [x] Make the game shuffle only once then use an increasing integer property to read different words
+
+## Project VI: AutoLayout
