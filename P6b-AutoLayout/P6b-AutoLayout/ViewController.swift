@@ -49,7 +49,12 @@ class ViewController: UIViewController {
         view.addSubview(label4)
         view.addSubview(label5)
         
+        let viewsDictionaries = ["label1": label1, "label2": label2, "label3": label3, "label4": label4, "label5": label5]
         
+        // add constraits with Visual Format Language
+        for label in viewsDictionaries.keys {
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|", options: [], metrics: nil, views: viewsDictionaries))
+        }
     }
 
     override func didReceiveMemoryWarning() {
