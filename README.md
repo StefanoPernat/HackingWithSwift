@@ -56,3 +56,7 @@ used also NSRange
 - [x] Make the game shuffle only once then use an increasing integer property to read different words
 
 ## Project VI: AutoLayout
+
+Learned how to build views programmatically, see a little bit of VFL (Visual Format Layout).  
+  
+I also used anchors to create constraints in code.
