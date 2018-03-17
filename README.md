@@ -57,6 +57,8 @@ used also NSRange
 
 ## Project VI: AutoLayout
 
+Used Interface Builder to add Autolayout constraints.  
+  
 Learned how to build views programmatically, see a little bit of VFL (Visual Format Layout).  
   
 I also used anchors to create constraints in code.
