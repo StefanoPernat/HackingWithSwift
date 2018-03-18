@@ -21,7 +21,7 @@ enum Method {
 struct PetitionsAPI {
     private static let baseURLString = "https://api.whitehouse.gov/v1/petitions.json"
     
-    private static func buildURL(forMethod method: Method, limit: Int) -> URL {
+    private static func buildURL(forMethod method: Method, limitedTo limit: Int) -> URL {
         // divide url into components
         var components = URLComponents(string: baseURLString)!
         var queryItems = [URLQueryItem]()
@@ -41,6 +41,20 @@ struct PetitionsAPI {
         return components.url!
     }
     
+    public static func fetchMostRecent(limit: Int) -> [String]? {
+        let url = buildURL(forMethod: .mostRecent, limitedTo: limit)
+        
+        print(url.absoluteString)
+        
+        return nil
+    }
     
+    public static func fetchMostSigned(threshold: Int, limit: Int) -> [String]? {
+        let url = buildURL(forMethod: .mostSigned(signatureThreshold: threshold), limitedTo: limit)
+        
+        print(url.absoluteString)
+        
+        return nil
+    }
     
 }

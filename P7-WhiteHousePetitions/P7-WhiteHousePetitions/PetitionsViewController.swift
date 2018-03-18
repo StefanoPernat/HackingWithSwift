@@ -13,6 +13,9 @@ class PetitionsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        PetitionsAPI.fetchMostRecent(limit: 100)
+        PetitionsAPI.fetchMostSigned(threshold: 10_000, limit: 100)
     }
 
     override func didReceiveMemoryWarning() {
