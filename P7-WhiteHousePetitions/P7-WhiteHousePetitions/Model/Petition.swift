@@ -10,19 +10,19 @@
 import Foundation
 
 class Petition {
-    let id: Int
+    let id: String
     let title: String
     let body: String
     let signatureCount: Int
     let signatureThreshold: Int
     
-    init?(fromJSON json: [String: String]) {
+    init?(fromJSON json: [String: Any]) {
         guard
-            let id = Int(json["id"]!),
-            let title = json["title"],
-            let body = json["body"],
-            let signatureCount = Int(json["signatureCount"]!),
-            let signatureThreshold = Int(json["signatureThreshold"]!)
+            let id = json["id"] as? String,
+            let title = json["title"] as? String,
+            let body = json["body"] as? String,
+            let signatureThreshold = json["signatureThreshold"] as? Int,
+            let signatureCount = json["signatureCount"] as? Int
         else {
             return nil
         }
