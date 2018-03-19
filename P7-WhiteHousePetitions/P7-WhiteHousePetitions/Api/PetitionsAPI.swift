@@ -4,7 +4,8 @@
 //
 // This struct will be the base class to fetch and build petitions array from JSON data
 //
-// 1) Build consistent URL
+// 1) Build consistent URL [OK]
+// 2) fetch JSON From URL
 
 //  Created by Stefano Pernat on 18/03/18.
 //  Copyright © 2018 Stefano Pernat. All rights reserved.
@@ -19,9 +20,11 @@ enum Method {
 
 
 struct PetitionsAPI {
+    
+    
     private static let baseURLString = "https://api.whitehouse.gov/v1/petitions.json"
     
-    private static func buildURL(forMethod method: Method, limitedTo limit: Int) -> URL {
+    public static func buildURL(forMethod method: Method, limitedTo limit: Int) -> URL {
         // divide url into components
         var components = URLComponents(string: baseURLString)!
         var queryItems = [URLQueryItem]()
@@ -41,11 +44,21 @@ struct PetitionsAPI {
         return components.url!
     }
     
-    public static func fetchMostRecent(limit: Int) -> [String]? {
+    /*public static func fetchMostRecent(limit: Int) -> [Petition]? {
+        var petitionsArray: [Petition]? = nil
         let url = buildURL(forMethod: .mostRecent, limitedTo: limit)
-        
-        print(url.absoluteString)
-        
+        let request = URLRequest(url: url)
+        let task = session.dataTask(with: request) {
+            (data, response, error) in
+            
+            if error == nil {
+                print("error is not nil")
+                let jsonObject = try! JSONSerialization.jsonObject(with: data!, options: [])
+                print(jsonObject)
+            }
+            
+        }
+        task.resume()
         return nil
     }
     
@@ -56,5 +69,22 @@ struct PetitionsAPI {
         
         return nil
     }
+    
+    private static func parseJSON(data: Data) -> [Petition]? {
+        do {
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+            guard
+            let jsonDictionary = jsonObject as? [AnyHashable: Any],
+            let jsonResult = jsonDictionary["result"] as? [Int: Any]
+            else {
+                return nil
+            }
+            
+            print(jsonObject)
+            return nil
+        } catch  {
+            return nil
+        }
+    }*/
     
 }
