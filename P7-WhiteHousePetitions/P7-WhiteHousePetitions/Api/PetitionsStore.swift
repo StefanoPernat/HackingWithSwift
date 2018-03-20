@@ -29,6 +29,11 @@ class PetitionsStore {
         fetch(fromURL: url, completition: completition)
     }
     
+    public func fetchMostSigned(signatureThreshold threshold: Int, limitedTo limit: Int, completition: @escaping (PetitionsResult) -> Void) {
+        let url = PetitionsAPI.buildURL(forMethod: .mostSigned(signatureThreshold: threshold), limitedTo: limit)
+        fetch(fromURL: url, completition: completition)
+    }
+    
     // - MARK: Private Methods
     private func fetch(fromURL url: URL, completition: @escaping (PetitionsResult) -> Void) {
         let request = URLRequest(url: url)
