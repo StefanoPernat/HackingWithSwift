@@ -5,7 +5,6 @@
 // This struct will be the base class to fetch and build petitions array from JSON data
 //
 // 1) Build consistent URL [OK]
-// 2) fetch JSON From URL
 
 //  Created by Stefano Pernat on 18/03/18.
 //  Copyright © 2018 Stefano Pernat. All rights reserved.

@@ -14,7 +14,7 @@ enum PetitionsResult {
     case failure
 }
 
-class PetitionStore {
+class PetitionsStore {
     // - MARK: Properties
     private let session: URLSession = {
         let config = URLSessionConfiguration.default
