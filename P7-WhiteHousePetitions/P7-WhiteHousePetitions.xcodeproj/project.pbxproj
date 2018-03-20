@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		205E904D205ED331000B363E /* PetitionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205E904C205ED331000B363E /* PetitionsAPI.swift */; };
+		2089670E2060621200BCC513 /* PetitionsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2089670D2060621200BCC513 /* PetitionsStore.swift */; };
+		208967112060622900BCC513 /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208967102060622900BCC513 /* Petition.swift */; };
 		20A81092205D288B0053A14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A81091205D288B0053A14F /* AppDelegate.swift */; };
 		20A81094205D288B0053A14F /* PetitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A81093205D288B0053A14F /* PetitionsViewController.swift */; };
 		20A81097205D288B0053A14F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A81095205D288B0053A14F /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		205E904C205ED331000B363E /* PetitionsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetitionsAPI.swift; sourceTree = "<group>"; };
+		2089670D2060621200BCC513 /* PetitionsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetitionsStore.swift; sourceTree = "<group>"; };
+		208967102060622900BCC513 /* Petition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
 		20A8108E205D288B0053A14F /* P7-WhiteHousePetitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P7-WhiteHousePetitions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20A81091205D288B0053A14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20A81093205D288B0053A14F /* PetitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetitionsViewController.swift; sourceTree = "<group>"; };
@@ -40,10 +44,20 @@
 		205E9049205ED280000B363E /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				2089670D2060621200BCC513 /* PetitionsStore.swift */,
 				205E904C205ED331000B363E /* PetitionsAPI.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
+		};
+		2089670F2060622900BCC513 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				208967102060622900BCC513 /* Petition.swift */,
+			);
+			name = Model;
+			path = "P7-WhiteHousePetitions/Model";
+			sourceTree = SOURCE_ROOT;
 		};
 		20A81085205D288B0053A14F = {
 			isa = PBXGroup;
@@ -64,6 +78,7 @@
 		20A81090205D288B0053A14F /* P7-WhiteHousePetitions */ = {
 			isa = PBXGroup;
 			children = (
+				2089670F2060622900BCC513 /* Model */,
 				205E9049205ED280000B363E /* Api */,
 				20A81091205D288B0053A14F /* AppDelegate.swift */,
 				20A81093205D288B0053A14F /* PetitionsViewController.swift */,
@@ -147,9 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208967112060622900BCC513 /* Petition.swift in Sources */,
 				205E904D205ED331000B363E /* PetitionsAPI.swift in Sources */,
 				20A81094205D288B0053A14F /* PetitionsViewController.swift in Sources */,
 				20A81092205D288B0053A14F /* AppDelegate.swift in Sources */,
+				2089670E2060621200BCC513 /* PetitionsStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
