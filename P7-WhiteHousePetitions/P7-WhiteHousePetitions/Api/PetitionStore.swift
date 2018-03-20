@@ -8,6 +8,12 @@
 
 import Foundation
 
+
+enum PetitionsResult {
+    case success([Petition])
+    case failure
+}
+
 class PetitionStore {
     // - MARK: Properties
     private let session: URLSession = {
@@ -18,30 +24,34 @@ class PetitionStore {
     var petitions: [Petition]?
     
     // - MARK: Public Methods
-    public func fetchMostRecent(limitedTo limit: Int) {
+    public func fetchMostRecent(limitedTo limit: Int, completition: @escaping (PetitionsResult) -> Void) {
         let url = PetitionsAPI.buildURL(forMethod: .mostRecent, limitedTo: limit)
-        fetch(fromURL: url, limitedTo: limit)
+        fetch(fromURL: url, completition: completition)
     }
     
     // - MARK: Private Methods
-    private func fetch(fromURL url: URL, limitedTo limit: Int) {
+    private func fetch(fromURL url: URL, completition: @escaping (PetitionsResult) -> Void) {
         let request = URLRequest(url: url)
-        let task = session.dataTask(with: request) {
+        let task = self.session.dataTask(with: request) {
             [unowned self] (data, response, error) in
-            
-            if error == nil {
-                guard
-                    let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: []),
-                    let jsonDictionary = jsonObject as? [AnyHashable: Any],
-                    let jsonArray = jsonDictionary["results"] as? [[String: Any]]
-                else {
-                        self.petitions = nil
-                        return
+                print("[FETCH] Started Task....")
+                if error == nil {
+                    print("[FETCH] No Errors")
+                    guard
+                        let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: []),
+                        let jsonDictionary = jsonObject as? [AnyHashable: Any],
+                        let jsonArray = jsonDictionary["results"] as? [[String: Any]]
+                    else {
+                            print("[FETCH] Error while parsing root json object")
+                            completition(.failure)
+                            return
+                    }
+                    
+                    completition(.success(self.parse(fromJSON: jsonArray)!))
+                    
+                    //print(self.petitions?.count)
                 }
-                
-                self.petitions = self.parse(fromJSON: jsonArray)
             }
-        }
         task.resume()
     }
     
