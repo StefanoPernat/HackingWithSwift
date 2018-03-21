@@ -11,10 +11,11 @@ import WebKit
 
 class PetitionDetailViewController: UIViewController {
 
+    // MARK: - Properites
     var selectedPetition: Petition?
     var webview: WKWebView!
     
-    
+    // MARK: - VC Callback Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +35,7 @@ class PetitionDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Private methods
     fileprivate func petitionToHtml(_ petitionBody: String) {
         var html    =   "<html>"
         
