@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import WebKit
 
 class PetitionDetailViewController: UIViewController {
 
+    var selectedPetition: Petition?
+    var webview: WKWebView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        webview = WKWebView()
+        view = webview
+        
     }
 
     override func didReceiveMemoryWarning() {
