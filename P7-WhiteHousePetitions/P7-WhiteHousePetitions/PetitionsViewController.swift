@@ -63,6 +63,10 @@ class PetitionsViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+        } else {
+            let errorAlertController = UIAlertController(title: "Error while fetching petitions", message: "There was a problem while fetching Whitehouse petitions", preferredStyle: .alert)
+            errorAlertController.addAction(UIAlertAction(title: "OK", style: .default))
+            present(errorAlertController, animated: true)
         }
     }
 
