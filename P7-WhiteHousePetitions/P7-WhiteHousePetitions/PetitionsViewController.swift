@@ -10,9 +10,11 @@ import UIKit
 
 class PetitionsViewController: UITableViewController {
 
+    // MARK: - properties
     var petitionsStore = PetitionsStore()
     var sortCriteria: Method = .mostRecent
     
+    // MARK: - VC callback methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,7 +28,13 @@ class PetitionsViewController: UITableViewController {
             petitionsStore.fetchMostSigned(signatureThreshold: threshold, limitedTo: 100, completition: fetchingIsOver)
         }
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
+    // MARK: - TableViewCallback methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.petitionsStore.petitions?.count ?? 0
     }
@@ -41,12 +49,14 @@ class PetitionsViewController: UITableViewController {
         
         return cell
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let petitionVC = PetitionDetailViewController()
+        petitionVC.selectedPetition = petitionsStore.petitions?[indexPath.row]
+        navigationController?.pushViewController(petitionVC, animated: true)
     }
     
+    // MARK: Private methods
     private func fetchingIsOver(result: PetitionsResult) -> Void {
         if case .success(let petitions) = result {
             self.petitionsStore.petitions = petitions
