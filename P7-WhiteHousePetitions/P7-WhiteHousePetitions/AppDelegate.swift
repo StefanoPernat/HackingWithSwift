@@ -16,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let tabBarController = window?.rootViewController as? UITabBarController {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let navigationVC = storyBoard.instantiateViewController(withIdentifier: "PetitionsController") as! UINavigationController
+            let petitionsVC = navigationVC.viewControllers.first as! PetitionsViewController
+            petitionsVC.sortCriteria = .mostSigned(signatureThreshold: 10_000)
+            navigationVC.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 1)
+            tabBarController.viewControllers?.append(navigationVC)
+        }
+        
         return true
     }
 

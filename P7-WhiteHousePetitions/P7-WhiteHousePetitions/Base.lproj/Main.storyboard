@@ -57,7 +57,7 @@
         <!--Navigation Controller-->
         <scene sceneID="lJn-00-uAi">
             <objects>
-                <navigationController storyboardIdentifier="NavController" automaticallyAdjustsScrollViewInsets="NO" id="1H7-T4-Nwy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PetitionsController" automaticallyAdjustsScrollViewInsets="NO" id="1H7-T4-Nwy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="mostRecent" id="cdV-AP-GIt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rBB-sZ-neq">
@@ -79,6 +79,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fSx-cU-slB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EL2-hj-kWb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
