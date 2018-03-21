@@ -64,3 +64,10 @@ Learned how to build views programmatically, see a little bit of VFL (Visual For
 I also used anchors to create constraints in code.
 
 ## Project VII Whitehouse Petitions
+
+With this project I learned a little bit about UITabBarController, and worked with JSON in swift.  
+
+I didn't follow Paul's approach, instead for making the request I preferred to use **URLSession**, **dataTask**.  
+  
+For updating UI I used completition handlers
+
