@@ -15,6 +15,7 @@
 		20A81097205D288B0053A14F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A81095205D288B0053A14F /* Main.storyboard */; };
 		20A81099205D288B0053A14F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20A81098205D288B0053A14F /* Assets.xcassets */; };
 		20A8109C205D288B0053A14F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A8109A205D288B0053A14F /* LaunchScreen.storyboard */; };
+		20BFBFE720625D81005269FA /* PetitionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BFBFE620625D81005269FA /* PetitionDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		20A81098205D288B0053A14F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20A8109B205D288B0053A14F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20A8109D205D288B0053A14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20BFBFE620625D81005269FA /* PetitionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetitionDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				20A81098205D288B0053A14F /* Assets.xcassets */,
 				20A8109A205D288B0053A14F /* LaunchScreen.storyboard */,
 				20A8109D205D288B0053A14F /* Info.plist */,
+				20BFBFE620625D81005269FA /* PetitionDetailViewController.swift */,
 			);
 			path = "P7-WhiteHousePetitions";
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				20A81094205D288B0053A14F /* PetitionsViewController.swift in Sources */,
 				20A81092205D288B0053A14F /* AppDelegate.swift in Sources */,
 				2089670E2060621200BCC513 /* PetitionsStore.swift in Sources */,
+				20BFBFE720625D81005269FA /* PetitionDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
