@@ -21,6 +21,12 @@ class PetitionDetailViewController: UIViewController {
         webview = WKWebView()
         view = webview
         
+        guard let petition = selectedPetition else {
+            return
+        }
+        
+        petitionToHtml(petition.body)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,15 +34,21 @@ class PetitionDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    fileprivate func petitionToHtml(_ petitionBody: String) {
+        var html    =   "<html>"
+        
+            html    +=  "<head>"
+            html    +=  "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+            html    +=  "<style>"
+            html    +=  "body {font-size: 150%}"
+            html    +=  "</style>"
+            html    +=  "</head>"
+            html    +=  "<body>"
+            html    +=  petitionBody
+            html    +=  "</body>"
+            html    +=  "</html>"
+        
+        webview.loadHTMLString(html, baseURL: nil)
+        
     }
-    */
-
 }
