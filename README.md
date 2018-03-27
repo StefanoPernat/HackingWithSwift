@@ -71,3 +71,4 @@ I didn't follow Paul's approach, instead for making the request I preferred to u
   
 For updating UI I used completition handlers
 
+#### Project VIII: Swifty Words
