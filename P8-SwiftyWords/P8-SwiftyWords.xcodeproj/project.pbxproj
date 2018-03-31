@@ -12,6 +12,8 @@
 		2042DF0A206AB342000D6094 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2042DF08206AB342000D6094 /* Main.storyboard */; };
 		2042DF0C206AB342000D6094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2042DF0B206AB342000D6094 /* Assets.xcassets */; };
 		2042DF0F206AB342000D6094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2042DF0D206AB342000D6094 /* LaunchScreen.storyboard */; };
+		209678FA206F961B00803B40 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 209678F8206F961A00803B40 /* level1.txt */; };
+		209678FB206F961B00803B40 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 209678F9206F961A00803B40 /* level2.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		2042DF0B206AB342000D6094 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2042DF0E206AB342000D6094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2042DF10206AB342000D6094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		209678F8206F961A00803B40 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
+		209678F9206F961A00803B40 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		2042DF03206AB342000D6094 /* P8-SwiftyWords */ = {
 			isa = PBXGroup;
 			children = (
+				209678F7206F95EA00803B40 /* Levels */,
 				2042DF04206AB342000D6094 /* AppDelegate.swift */,
 				2042DF06206AB342000D6094 /* WordsViewController.swift */,
 				2042DF08206AB342000D6094 /* Main.storyboard */,
@@ -62,6 +67,15 @@
 				2042DF10206AB342000D6094 /* Info.plist */,
 			);
 			path = "P8-SwiftyWords";
+			sourceTree = "<group>";
+		};
+		209678F7206F95EA00803B40 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				209678F8206F961A00803B40 /* level1.txt */,
+				209678F9206F961A00803B40 /* level2.txt */,
+			);
+			path = Levels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +137,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209678FB206F961B00803B40 /* level2.txt in Resources */,
 				2042DF0F206AB342000D6094 /* LaunchScreen.storyboard in Resources */,
+				209678FA206F961B00803B40 /* level1.txt in Resources */,
 				2042DF0C206AB342000D6094 /* Assets.xcassets in Resources */,
 				2042DF0A206AB342000D6094 /* Main.storyboard in Resources */,
 			);
