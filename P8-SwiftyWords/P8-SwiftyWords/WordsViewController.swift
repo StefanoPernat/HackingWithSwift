@@ -16,12 +16,20 @@ class WordsViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var currentAnswer: UITextField!
     
+    // - MARK: Properties
+    var letterButtons = [UIButton]()
+    var activatedButtons = [UIButton]()
+    var solutions = [String]()
     
+    var score = 0
+    var level = 1
     
     // - MARK: ViewController callback methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        initButtons()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,5 +45,17 @@ class WordsViewController: UIViewController {
     @IBAction func clearTapped(_ sender: UIButton) {
     }
     
+    // - MARK: Methods
+    @objc func letterTapped(_ sender: UIButton) {
+        print("tapped button!")
+    }
+    
+    fileprivate func initButtons() {
+        for subview in view.subviews where subview.tag == 1001 {
+            let button = subview as! UIButton
+            letterButtons.append(button)
+            button.addTarget(self, action: #selector(letterTapped(_:)), for: .touchUpInside)
+        }
+    }
 }
 
