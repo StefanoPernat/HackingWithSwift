@@ -9,7 +9,16 @@
 import UIKit
 
 class WordsViewController: UIViewController {
-
+    
+    // - MARK: IBOutlets
+    @IBOutlet weak var cluesLabel: UILabel!
+    @IBOutlet weak var answersLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var currentAnswer: UITextField!
+    
+    
+    
+    // - MARK: ViewController callback methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +29,13 @@ class WordsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    // - MARK: IBActions
+    @IBAction func submitTapped(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func clearTapped(_ sender: UIButton) {
+    }
+    
 }
 
