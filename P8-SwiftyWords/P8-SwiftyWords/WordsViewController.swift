@@ -49,7 +49,9 @@ class WordsViewController: UIViewController {
     
     // - MARK: Methods
     @objc func letterTapped(_ sender: UIButton) {
-        print("tapped button!")
+        currentAnswer.text = currentAnswer.text! + sender.titleLabel!.text!
+        activatedButtons.append(sender)
+        sender.isHidden = true
     }
     
     fileprivate func initButtons() {
