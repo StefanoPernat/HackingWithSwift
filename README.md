@@ -84,3 +84,5 @@ Learned a lot about Stings
 - [x] If player makes an incorrect guess remove points
 - [x] If score < 0 restart the game
 - [x] Add Autolayout
+
+## Project IX: Grand Central Dispatch
