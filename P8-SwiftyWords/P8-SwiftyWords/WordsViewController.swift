@@ -24,7 +24,9 @@ class WordsViewController: UIViewController {
     
     var score = 0 {
         didSet {
-            scoreLabel.text = "Score: \(score)"
+            if score >= 0 {
+                scoreLabel.text = "Score: \(score)"
+            }
         }
     }
     var level = 1
@@ -61,9 +63,15 @@ class WordsViewController: UIViewController {
             }
         } else {
             score -= 1
-            let wrongAnswerAlertController = UIAlertController(title: "Wrong Answer", message: "Incorrect guess", preferredStyle: .alert)
-            wrongAnswerAlertController.addAction(UIAlertAction(title: "Try again", style: .default))
-            present(wrongAnswerAlertController, animated: true)
+            if score >= 0 {
+                let wrongAnswerAlertController = UIAlertController(title: "Wrong Answer", message: "Incorrect guess", preferredStyle: .alert)
+                wrongAnswerAlertController.addAction(UIAlertAction(title: "Try again", style: .default, handler: clearAfterWrongAnswer))
+                present(wrongAnswerAlertController, animated: true)
+            } else {
+                let lostAlertController = UIAlertController(title: "You lost", message: "Try again", preferredStyle: .alert)
+                lostAlertController.addAction(UIAlertAction(title: "OK", style: .default, handler: forceNewGame))
+                present(lostAlertController, animated: true)
+            }
         }
     }
     
@@ -137,6 +145,29 @@ class WordsViewController: UIViewController {
         }
     }
     
+    func forceNewGame(action: UIAlertAction) {
+        level = 1
+        score = 0
+        
+        solutions.removeAll(keepingCapacity: true)
+        activatedButtons.removeAll(keepingCapacity: true)
+        currentAnswer.text = ""
+        
+        for button in letterButtons {
+            button.isHidden = false
+        }
+        
+        loadLevel()
+    }
     
+    func clearAfterWrongAnswer(action: UIAlertAction) {
+        for btn in activatedButtons {
+            btn.isHidden = false
+        }
+        
+        activatedButtons.removeAll(keepingCapacity: true)
+        
+        currentAnswer.text = ""
+    }
 }
 
