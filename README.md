@@ -81,6 +81,6 @@ Learned a lot about Stings
 
 #### Project VIII: Future edits
 
-- [] If player makes an incorrect guess remove points
+- [x] If player makes an incorrect guess remove points
 - [] If score < 0 restart the game
 - [] Add Autolayout

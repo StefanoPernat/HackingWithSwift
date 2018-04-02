@@ -59,6 +59,11 @@ class WordsViewController: UIViewController {
                 nextLevelAlertController.addAction(UIAlertAction(title: "Let's go", style: .default, handler: levelUp))
                 present(nextLevelAlertController, animated: true)
             }
+        } else {
+            score -= 1
+            let wrongAnswerAlertController = UIAlertController(title: "Wrong Answer", message: "Incorrect guess", preferredStyle: .alert)
+            wrongAnswerAlertController.addAction(UIAlertAction(title: "Try again", style: .default))
+            present(wrongAnswerAlertController, animated: true)
         }
     }
     
@@ -131,5 +136,7 @@ class WordsViewController: UIViewController {
             btn.isHidden = false
         }
     }
+    
+    
 }
 
