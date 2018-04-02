@@ -71,10 +71,16 @@ I didn't follow Paul's approach, instead for making the request I preferred to u
   
 For updating UI I used completition handlers
 
-#### Project VIII: Swifty Words
+## Project VIII: Swifty Words
 
 Developing this project I learned about adding target methods to buttons also in code and not only with Interface Builder.  
   
 Use also the enumerated array method that return a tuple we can use in for loop.
 
 Learned a lot about Stings
+
+#### Project VIII: Future edits
+
+- [] If player makes an incorrect guess remove points
+- [] If score < 0 restart the game
+- [] Add Autolayout
