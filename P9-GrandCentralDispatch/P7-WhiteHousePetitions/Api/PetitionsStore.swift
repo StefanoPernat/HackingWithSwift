@@ -36,9 +36,12 @@ class PetitionsStore {
     
     // - MARK: Private Methods
     private func fetch(fromURL url: URL, completition: @escaping (PetitionsResult) -> Void) {
-        let request = URLRequest(url: url)
-        let task = self.session.dataTask(with: request) {
-            [unowned self] (data, response, error) in
+        DispatchQueue.global(qos: .userInitiated).async {
+            [unowned self] in
+            
+            let request = URLRequest(url: url)
+            let task = self.session.dataTask(with: request) {
+                [unowned self] (data, response, error) in
                 print("[FETCH] Started Task....")
                 if error == nil {
                     print("[FETCH] No Errors")
@@ -46,7 +49,7 @@ class PetitionsStore {
                         let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: []),
                         let jsonDictionary = jsonObject as? [AnyHashable: Any],
                         let jsonArray = jsonDictionary["results"] as? [[String: Any]]
-                    else {
+                        else {
                             print("[FETCH] Error while parsing root json object")
                             completition(.failure)
                             return
@@ -57,7 +60,8 @@ class PetitionsStore {
                     //print(self.petitions?.count)
                 }
             }
-        task.resume()
+            task.resume()
+        }
     }
     
     private func parse(fromJSON json: [[String: Any]]) -> [Petition]? {

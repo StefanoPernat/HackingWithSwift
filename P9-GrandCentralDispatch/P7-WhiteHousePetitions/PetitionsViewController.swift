@@ -58,18 +58,20 @@ class PetitionsViewController: UITableViewController {
     
     // MARK: Private methods
     private func fetchingIsOver(result: PetitionsResult) -> Void {
-        if case .success(let petitions) = result {
-            self.petitionsStore.petitions = petitions
-            DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            [unowned self] in
+            
+            if case .success(let petitions) = result {
+                self.petitionsStore.petitions = petitions
+                //DispatchQueue.main.async {
                 self.tableView.reloadData()
+                //}
+            } else {
+                let errorAlertController = UIAlertController(title: "Error while fetching petitions", message: "There was a problem while fetching Whitehouse petitions", preferredStyle: .alert)
+                errorAlertController.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(errorAlertController, animated: true)
             }
-        } else {
-            let errorAlertController = UIAlertController(title: "Error while fetching petitions", message: "There was a problem while fetching Whitehouse petitions", preferredStyle: .alert)
-            errorAlertController.addAction(UIAlertAction(title: "OK", style: .default))
-            present(errorAlertController, animated: true)
         }
     }
-
-
 }
 
