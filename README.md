@@ -86,3 +86,7 @@ Learned a lot about Stings
 - [x] Add Autolayout
 
 ## Project IX: Grand Central Dispatch
+
+Refactored Project VII to use Grand Central Dispatch for executing fetching phase on backround thread,  
+  
+and completition handler into main thread
