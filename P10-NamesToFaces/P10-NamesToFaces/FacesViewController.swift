@@ -10,6 +10,7 @@ import UIKit
 
 class FacesViewController: UICollectionViewController {
 
+    // - MARK: ViewController callbacks
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +21,15 @@ class FacesViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    // - MARK: CollectionView callback methods
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Person", for: indexPath) as! PersonCell
+        
+        return cell
+    }
 }
 
