@@ -8,12 +8,14 @@
 
 import UIKit
 
-class FacesViewController: UICollectionViewController {
+class FacesViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // - MARK: ViewController callbacks
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +32,14 @@ class FacesViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Person", for: indexPath) as! PersonCell
         
         return cell
+    }
+    
+    // - MARK: methods
+    @objc func addNewPerson() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
     }
 }
 
