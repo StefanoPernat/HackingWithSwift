@@ -34,12 +34,34 @@ class FacesViewController: UICollectionViewController, UIImagePickerControllerDe
         return cell
     }
     
+    // - MARK: ImagePickerControllerCallbacks
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let image = info[UIImagePickerControllerEditedImage] as? UIImage else {
+            return
+        }
+        
+        let imageName = UUID().uuidString
+        let imagePath = getDocumentDirectory().appendingPathComponent(imageName)
+        
+        if let jpegData = UIImageJPEGRepresentation(image, 80) {
+            try? jpegData.write(to: imagePath)
+        }
+        
+        dismiss(animated: true)
+    }
+    
     // - MARK: methods
     @objc func addNewPerson() {
         let picker = UIImagePickerController()
         picker.allowsEditing = true
         picker.delegate = self
         present(picker, animated: true)
+    }
+    
+    fileprivate func getDocumentDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        return paths[0]
     }
 }
 
