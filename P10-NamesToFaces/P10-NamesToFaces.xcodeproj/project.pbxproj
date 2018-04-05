@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		205C9F2220768A8A008B7E65 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205C9F2120768A8A008B7E65 /* Person.swift */; };
 		2096965C2073F3D40062A594 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096965B2073F3D40062A594 /* AppDelegate.swift */; };
 		2096965E2073F3D40062A594 /* FacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096965D2073F3D40062A594 /* FacesViewController.swift */; };
 		209696612073F3D40062A594 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2096965F2073F3D40062A594 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		205C9F2120768A8A008B7E65 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		209696582073F3D40062A594 /* P10-NamesToFaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P10-NamesToFaces.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2096965B2073F3D40062A594 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2096965D2073F3D40062A594 /* FacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacesViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		205C9F2020768A62008B7E65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				205C9F2120768A8A008B7E65 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2096964F2073F3D40062A594 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		2096965A2073F3D40062A594 /* P10-NamesToFaces */ = {
 			isa = PBXGroup;
 			children = (
+				205C9F2020768A62008B7E65 /* Model */,
 				2096966D2074114C0062A594 /* Views */,
 				2096965B2073F3D40062A594 /* AppDelegate.swift */,
 				2096965D2073F3D40062A594 /* FacesViewController.swift */,
@@ -149,6 +160,7 @@
 			files = (
 				2096966F207411910062A594 /* PersonCell.swift in Sources */,
 				2096965E2073F3D40062A594 /* FacesViewController.swift in Sources */,
+				205C9F2220768A8A008B7E65 /* Person.swift in Sources */,
 				2096965C2073F3D40062A594 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
