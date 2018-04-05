@@ -90,3 +90,9 @@ Learned a lot about Stings
 Refactored Project VII to use Grand Central Dispatch for executing fetching phase on backround thread,  
   
 and completition handler into main thread
+
+## Project X: NamesToFaces
+
+In this project I used for first time UICollectionViewController, (very similar to UITableView).  
+  
+Understand a little bit about UIImagePickerController, and UUID
