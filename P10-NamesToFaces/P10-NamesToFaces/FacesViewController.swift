@@ -49,6 +49,24 @@ class FacesViewController: UICollectionViewController, UIImagePickerControllerDe
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let person = people[indexPath.item]
+        
+        let changeNameAlertController = UIAlertController(title: "Rename person", message: nil, preferredStyle: .alert)
+        changeNameAlertController.addTextField()
+        changeNameAlertController.addAction(UIAlertAction(title: "OK", style: .default) { [unowned self, changeNameAlertController] _ in
+            let newName = changeNameAlertController.textFields![0].text!
+            
+            if newName.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
+                person.name = newName
+            }
+            
+            self.collectionView?.reloadData()
+        })
+        changeNameAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(changeNameAlertController, animated: true)
+    }
+    
     // - MARK: ImagePickerControllerCallbacks
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let image = info[UIImagePickerControllerEditedImage] as? UIImage else {
