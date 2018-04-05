@@ -10,6 +10,9 @@ import UIKit
 
 class FacesViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    // - MARK: Properties
+    var people = [Person]()
+    
     // - MARK: ViewController callbacks
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,11 @@ class FacesViewController: UICollectionViewController, UIImagePickerControllerDe
         if let jpegData = UIImageJPEGRepresentation(image, 80) {
             try? jpegData.write(to: imagePath)
         }
+        
+        let person = Person(name: "Unknown", image: imageName)
+        people.append(person)
+        
+        collectionView?.reloadData()
         
         dismiss(animated: true)
     }
