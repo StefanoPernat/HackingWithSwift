@@ -96,3 +96,5 @@ and completition handler into main thread
 In this project I used for first time UICollectionViewController, (very similar to UITableView).  
   
 Understand a little bit about UIImagePickerController, and UUID
+
+Project XI: Pachinko
