@@ -75,6 +75,9 @@ class GameScene: SKScene {
         
         slotGlow.run(spinForever)
         
+        slotBase.physicsBody = SKPhysicsBody(rectangleOf: slotBase.size)
+        slotBase.physicsBody?.isDynamic = false
+        
         addChild(slotBase)
         addChild(slotGlow)
     }
