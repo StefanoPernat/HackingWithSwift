@@ -9,8 +9,10 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
+        physicsWorld.contactDelegate = self
+        
         let background = SKSpriteNode(imageNamed: "background.jpg")
         
         background.position = CGPoint(x: 512, y: 384)
