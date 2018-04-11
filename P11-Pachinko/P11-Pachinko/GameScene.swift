@@ -10,6 +10,8 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    
+    // - MARK: SKScene callback methods
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         
@@ -50,6 +52,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         makeBouncer(at: CGPoint(x: 1024, y: 0))
     }
     
+    // - MARK: methods
     func makeBouncer(at position: CGPoint) {
         let bouncer = SKSpriteNode(imageNamed: "bouncer")
         
@@ -87,5 +90,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addChild(slotBase)
         addChild(slotGlow)
+    }
+    
+    func collisionBetween(ball: SKNode, object: SKNode) {
+        if object.name == "good" {
+            destroy(ball)
+        } else if object.name == "bad" {
+            destroy(ball)
+        }
+    }
+    
+    func destroy(_ ball: SKNode) {
+        ball.removeFromParent()
     }
 }
