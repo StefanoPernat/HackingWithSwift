@@ -110,8 +110,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func collisionBetween(ball: SKNode, object: SKNode) {
         if object.name == "good" {
             destroy(ball)
+            score += 1
         } else if object.name == "bad" {
             destroy(ball)
+            score -= 1
         }
     }
     
