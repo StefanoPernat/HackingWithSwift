@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		205737F3207FCD6D00043EA3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205737F2207FCD6D00043EA3 /* Helper.swift */; };
+		205737F5207FDAD000043EA3 /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 205737F4207FDACF00043EA3 /* FireParticles.sks */; };
 		20DDA29B2078CD5400029D60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DDA29A2078CD5400029D60 /* AppDelegate.swift */; };
 		20DDA29D2078CD5400029D60 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20DDA29C2078CD5400029D60 /* GameScene.sks */; };
 		20DDA2A12078CD5400029D60 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DDA2A02078CD5400029D60 /* GameScene.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		205737F2207FCD6D00043EA3 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		205737F4207FDACF00043EA3 /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
 		20DDA2972078CD5400029D60 /* P11-Pachinko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P11-Pachinko.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DDA29A2078CD5400029D60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20DDA29C2078CD5400029D60 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				205737F1207FCD5900043EA3 /* Util */,
 				20DDA29A2078CD5400029D60 /* AppDelegate.swift */,
 				20DDA29C2078CD5400029D60 /* GameScene.sks */,
+				205737F4207FDACF00043EA3 /* FireParticles.sks */,
 				20DDA2A02078CD5400029D60 /* GameScene.swift */,
 				20DDA2A22078CD5400029D60 /* PachinkoViewController.swift */,
 				20DDA2A42078CD5400029D60 /* Main.storyboard */,
@@ -141,6 +144,7 @@
 			files = (
 				20DDA2A62078CD5400029D60 /* Main.storyboard in Resources */,
 				20DDA29D2078CD5400029D60 /* GameScene.sks in Resources */,
+				205737F5207FDAD000043EA3 /* FireParticles.sks in Resources */,
 				20DDA2A82078CD5500029D60 /* Assets.xcassets in Resources */,
 				20DDA2AB2078CD5500029D60 /* LaunchScreen.storyboard in Resources */,
 			);
