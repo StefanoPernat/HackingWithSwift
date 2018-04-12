@@ -97,4 +97,12 @@ In this project I used for first time UICollectionViewController, (very similar 
   
 Understand a little bit about UIImagePickerController, and UUID
 
-Project XI: Pachinko
+## Project XI: Pachinko
+
+Learned the structure of a iOS game with SpriteKit Framework
+
+#### Project XI: Future edits
+
+- [] Generate a random number and choose ball colors randomly
+- [] Give players a limit of 5 balls, then remove obstacles boxes when they are hit
+- [] Make clicking on an obstacle box in editing mode remove it.
