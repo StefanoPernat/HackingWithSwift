@@ -59,14 +59,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let touch = touches.first {
             let location = touch.location(in: self)
             
-            let ball = SKSpriteNode(imageNamed: "ballRed")
-            ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
-            ball.physicsBody?.restitution = 0.4
-            ball.physicsBody!.contactTestBitMask = ball.physicsBody!.collisionBitMask
-            ball.position = location
-            ball.name = "ball"
+            let objects = nodes(at: location)
             
-            addChild(ball)
+            if objects.contains(editLabel) {
+                editingMode = !editingMode
+            } else {
+                if editingMode {
+                    
+                } else {
+                    let ball = SKSpriteNode(imageNamed: "ballRed")
+                    ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
+                    ball.physicsBody?.restitution = 0.4
+                    ball.physicsBody!.contactTestBitMask = ball.physicsBody!.collisionBitMask
+                    ball.position = location
+                    ball.name = "ball"
+                    
+                    addChild(ball)
+                }
+            }
         }
         
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
