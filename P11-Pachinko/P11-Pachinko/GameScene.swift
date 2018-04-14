@@ -14,6 +14,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // - MARK: Properties
     var scoreLabel: SKLabelNode!
     var editLabel: SKLabelNode!
+    var ballsLabel: SKLabelNode!
     
     let choseBall: String = {
         var array = ["Blue", "Cyan", "Green", "Grey", "Purple", "Red"]
@@ -26,6 +27,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
+        }
+    }
+    
+    var availableBalls = 5 {
+        didSet {
+            ballsLabel.text = "Balls: \(availableBalls)"
         }
     }
     
@@ -61,6 +68,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         editLabel.text = "Edit"
         editLabel.position = CGPoint(x: 80, y: 700)
         addChild(editLabel)
+        
+        ballsLabel = SKLabelNode(fontNamed: "Chalkduster")
+        ballsLabel.text = "Balls: \(availableBalls)"
+        ballsLabel.position = CGPoint(x: 450, y: 700)
+        addChild(ballsLabel)
+        
+        physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
+        
+        makeSlot(at: CGPoint(x: 128, y: 0), isGood: true)
+        makeSlot(at: CGPoint(x: 384, y: 0), isGood: false)
+        makeSlot(at: CGPoint(x: 640, y: 0), isGood: true)
+        makeSlot(at: CGPoint(x: 896, y: 0), isGood: false)
+        
+        makeBouncer(at: CGPoint(x: 0, y: 0))
+        makeBouncer(at: CGPoint(x: 256, y: 0))
+        makeBouncer(at: CGPoint(x: 512, y: 0))
+        makeBouncer(at: CGPoint(x: 768, y: 0))
+        makeBouncer(at: CGPoint(x: 1024, y: 0))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -83,30 +108,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     addChild(box)
                 } else {
-                    let ball = SKSpriteNode(imageNamed: choseBall)
-                    ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
-                    ball.physicsBody?.restitution = 0.4
-                    ball.physicsBody!.contactTestBitMask = ball.physicsBody!.collisionBitMask
-                    ball.position = location
-                    ball.name = "ball"
-                    
-                    addChild(ball)
+                    if availableBalls > 0 {
+                        availableBalls -= 1
+                        let ball = SKSpriteNode(imageNamed: choseBall)
+                        ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
+                        ball.physicsBody?.restitution = 0.4
+                        ball.physicsBody!.contactTestBitMask = ball.physicsBody!.collisionBitMask
+                        ball.position = location
+                        ball.name = "ball"
+                        
+                        addChild(ball)
+                    }
                 }
             }
         }
-        
-        physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
-        
-        makeSlot(at: CGPoint(x: 128, y: 0), isGood: true)
-        makeSlot(at: CGPoint(x: 384, y: 0), isGood: false)
-        makeSlot(at: CGPoint(x: 640, y: 0), isGood: true)
-        makeSlot(at: CGPoint(x: 896, y: 0), isGood: false)
-        
-        makeBouncer(at: CGPoint(x: 0, y: 0))
-        makeBouncer(at: CGPoint(x: 256, y: 0))
-        makeBouncer(at: CGPoint(x: 512, y: 0))
-        makeBouncer(at: CGPoint(x: 768, y: 0))
-        makeBouncer(at: CGPoint(x: 1024, y: 0))
     }
     
     // - MARK: SKPhysicsCollisionDelegate methods
