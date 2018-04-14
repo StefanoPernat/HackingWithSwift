@@ -98,16 +98,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 editingMode = !editingMode
             } else {
                 if editingMode {
-                    let size = CGSize(width: GKRandomDistribution(lowestValue: 16, highestValue: 128).nextInt(), height: 16)
-                    
-                    let box = SKSpriteNode(color: RandomColor(), size: size)
-                    box.zRotation = RandomCGFloat(min: 0, max: 3)
-                    box.position = location
-                    box.name = "obstacle"
-                    box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
-                    box.physicsBody?.isDynamic = false
-                    
-                    addChild(box)
+                    if let object = obstacle(in: objects) {
+                        object.removeFromParent()
+                    } else {
+                        let size = CGSize(width: GKRandomDistribution(lowestValue: 16, highestValue: 128).nextInt(), height: 16)
+                        
+                        let box = SKSpriteNode(color: RandomColor(), size: size)
+                        box.zRotation = RandomCGFloat(min: 0, max: 3)
+                        box.position = location
+                        box.name = "obstacle"
+                        box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
+                        box.physicsBody?.isDynamic = false
+                        
+                        addChild(box)
+                    }
                 } else {
                     if availableBalls > 0 {
                         availableBalls -= 1
@@ -201,5 +205,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         node.removeFromParent()
+    }
+    
+    func obstacle(in objects: [SKNode]) -> SKNode? {
+        for item in objects {
+            if item.name == "obstacle" {
+                return item
+            }
+        }
+        
+        return nil
     }
 }
