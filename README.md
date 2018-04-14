@@ -106,3 +106,7 @@ Learned the structure of a iOS game with SpriteKit Framework
 - [x] Generate a random number and choose ball colors randomly
 - [x] Give players a limit of 5 balls, then remove obstacles boxes when they are hit
 - [x] Make clicking on an obstacle box in editing mode remove it.
+
+## Project XII: UserDefaults
+
+
