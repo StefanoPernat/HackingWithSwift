@@ -15,6 +15,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreLabel: SKLabelNode!
     var editLabel: SKLabelNode!
     
+    let choseBall: String = {
+        var array = ["Blue", "Cyan", "Green", "Grey", "Purple", "Red"]
+        array = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: array) as! [String]
+        
+        return "ball\(array.first!)"
+        
+    }()
+    
     var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
@@ -75,7 +83,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     addChild(box)
                 } else {
-                    let ball = SKSpriteNode(imageNamed: "ballRed")
+                    let ball = SKSpriteNode(imageNamed: choseBall)
                     ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
                     ball.physicsBody?.restitution = 0.4
                     ball.physicsBody!.contactTestBitMask = ball.physicsBody!.collisionBitMask
@@ -99,6 +107,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         makeBouncer(at: CGPoint(x: 512, y: 0))
         makeBouncer(at: CGPoint(x: 768, y: 0))
         makeBouncer(at: CGPoint(x: 1024, y: 0))
+    }
+    
+    // - MARK: SKPhysicsCollisionDelegate methods
+    func didBegin(_ contact: SKPhysicsContact) {
+        guard let nodeA = contact.bodyA.node else {
+            return
+        }
+        
+        guard let nodeB = contact.bodyB.node else {
+            return
+        }
+        
+        if nodeA.name == "ball" {
+            collisionBetween(ball: nodeA, object: nodeB)
+        } else if nodeB.name == "ball" {
+            collisionBetween(ball: nodeB, object: nodeA)
+        }
     }
     
     // - MARK: methods
@@ -158,21 +183,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         ball.removeFromParent()
-    }
-    
-    func didBegin(_ contact: SKPhysicsContact) {
-        guard let nodeA = contact.bodyA.node else {
-            return
-        }
-        
-        guard let nodeB = contact.bodyB.node else {
-            return
-        }
-        
-        if nodeA.name == "ball" {
-            collisionBetween(ball: nodeA, object: nodeB)
-        } else if nodeB.name == "ball" {
-            collisionBetween(ball: nodeB, object: nodeA)
-        }
     }
 }
