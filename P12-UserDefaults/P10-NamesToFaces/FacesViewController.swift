@@ -19,6 +19,13 @@ class FacesViewController: UICollectionViewController, UIImagePickerControllerDe
         // Do any additional setup after loading the view, typically from a nib.
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
+        
+        // loading from UserDefaults
+        let defaults = UserDefaults.standard
+        
+        if let savedPeople = defaults.object(forKey: "people") as? Data {
+            people = NSKeyedUnarchiver.unarchiveObject(with: savedPeople) as! [Person]
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +69,7 @@ class FacesViewController: UICollectionViewController, UIImagePickerControllerDe
             }
             
             self.collectionView?.reloadData()
+            self.save()
         })
         changeNameAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(changeNameAlertController, animated: true)
@@ -84,6 +92,7 @@ class FacesViewController: UICollectionViewController, UIImagePickerControllerDe
         people.append(person)
         
         collectionView?.reloadData()
+        save()
         
         dismiss(animated: true)
     }
