@@ -101,5 +101,12 @@ class FacesViewController: UICollectionViewController, UIImagePickerControllerDe
         
         return paths[0]
     }
+    
+    func save() {
+        let savedData = NSKeyedArchiver.archivedData(withRootObject: people)
+        
+        let defaults = UserDefaults.standard
+        defaults.set(savedData, forKey: "people")
+    }
 }
 
