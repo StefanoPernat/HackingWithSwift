@@ -109,4 +109,7 @@ Learned the structure of a iOS game with SpriteKit Framework
 
 ## Project XII: UserDefaults
 
+Learned how to save data to UserDefaults making conform model class to:
 
+- NSCoding (implementing init?(coder:) and encode )
+- Codable (with the help of JSON encoder and decoder)
