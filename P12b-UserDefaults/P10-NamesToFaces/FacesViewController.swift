@@ -62,6 +62,7 @@ class FacesViewController: UICollectionViewController, UIImagePickerControllerDe
             }
             
             self.collectionView?.reloadData()
+            self.save()
         })
         changeNameAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(changeNameAlertController, animated: true)
@@ -84,6 +85,7 @@ class FacesViewController: UICollectionViewController, UIImagePickerControllerDe
         people.append(person)
         
         collectionView?.reloadData()
+        save()
         
         dismiss(animated: true)
     }
@@ -100,6 +102,17 @@ class FacesViewController: UICollectionViewController, UIImagePickerControllerDe
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
         return paths[0]
+    }
+    
+    func save() {
+        let jsonEncoder = JSONEncoder()
+        
+        if let savedData = try? jsonEncoder.encode(people) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "people")
+        } else {
+            print("Failed to save people.")
+        }
     }
 }
 
