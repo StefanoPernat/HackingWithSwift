@@ -113,3 +113,5 @@ Learned how to save data to UserDefaults making conform model class to:
 
 - NSCoding (implementing init?(coder:) and encode )
 - Codable (with the help of JSON encoder and decoder)
+
+## Project XIII: Instafilter
