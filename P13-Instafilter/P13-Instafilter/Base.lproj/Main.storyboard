@@ -43,18 +43,16 @@
                                 <rect key="frame" x="96" y="557" width="262" height="31"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mz7-dD-8Af">
-                                <rect key="frame" x="16" y="605" width="120" height="44"/>
+                                <rect key="frame" x="16" y="605" width="92" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="GAa-gB-TU6"/>
-                                    <constraint firstAttribute="width" constant="120" id="bmi-Sx-oGs"/>
                                 </constraints>
                                 <state key="normal" title="Change Filter"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGO-sO-TpC">
-                                <rect key="frame" x="300" y="605" width="60" height="44"/>
+                                <rect key="frame" x="326" y="605" width="34" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="PHy-F7-Q0f"/>
-                                    <constraint firstAttribute="width" constant="60" id="WuO-59-RHU"/>
                                 </constraints>
                                 <state key="normal" title="Save"/>
                             </button>
@@ -68,11 +66,13 @@
                             <constraint firstItem="BeA-nd-HcH" firstAttribute="top" secondItem="hYu-93-fgY" secondAttribute="bottom" constant="28" id="N14-K7-bh1"/>
                             <constraint firstItem="hYu-93-fgY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Oem-Rt-2yA"/>
                             <constraint firstItem="hYu-93-fgY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Tmi-R4-iQ6"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mz7-dD-8Af" secondAttribute="trailing" constant="20" symbolic="YES" id="XPZ-Zh-zXe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mz7-dD-8Af" secondAttribute="bottom" constant="18" id="ZNC-p4-rr1"/>
                             <constraint firstItem="mz7-dD-8Af" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ank-By-Pfo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WGO-sO-TpC" secondAttribute="bottom" constant="18" id="eX8-Ee-kfV"/>
                             <constraint firstItem="4QS-d4-eT6" firstAttribute="leading" secondItem="BeA-nd-HcH" secondAttribute="trailing" constant="16.5" id="gWd-15-frK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4QS-d4-eT6" secondAttribute="trailing" constant="19" id="hth-we-kR9"/>
+                            <constraint firstItem="WGO-sO-TpC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="qjy-Wo-3ga"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WGO-sO-TpC" secondAttribute="trailing" constant="15" id="sWM-uI-wTV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
