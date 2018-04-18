@@ -78,6 +78,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="F4B-0o-haT"/>
+                    <connections>
+                        <outlet property="imageView" destination="k0b-fT-LpU" id="zdI-pv-IHp"/>
+                        <outlet property="intensity" destination="4QS-d4-eT6" id="9NJ-9s-CTM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,7 +9,11 @@
 import UIKit
 
 class FilterViewController: UIViewController {
+    // - MARK: Properties
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var intensity: UISlider!
 
+    // - MARK: view controller callback functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
