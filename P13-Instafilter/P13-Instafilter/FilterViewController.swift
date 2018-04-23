@@ -24,6 +24,14 @@ class FilterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - IBActions
+    @IBAction func changeFilter(sender: UIButton) {
+        
+    }
+    
+    @IBAction func save(sender: UIButton) {
+        
+    }
 
 }
 
