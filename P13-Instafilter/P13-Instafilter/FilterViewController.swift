@@ -32,6 +32,8 @@ class FilterViewController: UIViewController {
     @IBAction func save(sender: UIButton) {
         
     }
-
+    
+    @IBAction func intensityChanged(_ sender: UISlider) {
+    }
 }
 
