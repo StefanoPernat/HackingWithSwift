@@ -18,7 +18,9 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
     // - MARK: view controller callback functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        title = "YACIFP"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(importPicture))
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +40,7 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBAction func intensityChanged(_ sender: UISlider) {
     }
     
-    func importPicture() {
+    @objc func importPicture() {
         let picker = UIImagePickerController()
         
         picker.allowsEditing = true
