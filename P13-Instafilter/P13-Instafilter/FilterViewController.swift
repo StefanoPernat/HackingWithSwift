@@ -28,7 +28,18 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - IBActions
+    // - MARK: UIImagePickerControllerDelegate callback functions
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let image = info[UIImagePickerControllerEditedImage] as? UIImage else {
+            return
+        }
+        
+        dismiss(animated: true)
+        
+        currentImage = image
+    }
+    
+    // - MARK: IBActions
     @IBAction func changeFilter(sender: UIButton) {
         
     }
@@ -40,6 +51,7 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBAction func intensityChanged(_ sender: UISlider) {
     }
     
+    // - MARK: Functions
     @objc func importPicture() {
         let picker = UIImagePickerController()
         
