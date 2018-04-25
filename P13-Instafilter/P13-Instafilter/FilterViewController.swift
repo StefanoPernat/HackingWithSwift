@@ -49,6 +49,8 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
         let beginImage = CIImage(image: currentImage)
         
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        
+        applyProcessing()
     }
     
     // - MARK: IBActions
@@ -61,6 +63,7 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func intensityChanged(_ sender: UISlider) {
+        applyProcessing()
     }
     
     // - MARK: Functions
@@ -71,6 +74,16 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
         picker.delegate = self
         
         present(picker, animated: true)
+    }
+    
+    func applyProcessing() {
+        currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey)
+        
+        if let cgImage = context.createCGImage(currentFilter.outputImage!, from: currentFilter.outputImage!.extent) {
+            let processedImage = UIImage(cgImage: cgImage)
+            
+            imageView.image = processedImage
+        }
     }
 }
 
