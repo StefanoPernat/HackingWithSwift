@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FilterViewController: UIViewController {
+class FilterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // - MARK: Properties
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var intensity: UISlider!
