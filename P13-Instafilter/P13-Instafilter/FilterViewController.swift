@@ -12,6 +12,8 @@ class FilterViewController: UIViewController {
     // - MARK: Properties
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var intensity: UISlider!
+    
+    var currentImage: UIImage!
 
     // - MARK: view controller callback functions
     override func viewDidLoad() {
@@ -35,5 +37,7 @@ class FilterViewController: UIViewController {
     
     @IBAction func intensityChanged(_ sender: UISlider) {
     }
+    
+    
 }
 
