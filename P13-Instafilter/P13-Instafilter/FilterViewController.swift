@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreImage
 
 class FilterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // - MARK: Properties
@@ -14,6 +15,10 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var intensity: UISlider!
     
     var currentImage: UIImage!
+    
+    // - MARK: CoreImage properties
+    var context: CIContext!
+    var currentFilter: CIFilter!
 
     // - MARK: view controller callback functions
     override func viewDidLoad() {
@@ -21,6 +26,9 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         title = "YACIFP"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(importPicture))
+        
+        context = CIContext()
+        currentFilter = CIFilter(name: "CISepiaTone")
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +45,10 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
         dismiss(animated: true)
         
         currentImage = image
+        
+        let beginImage = CIImage(image: currentImage)
+        
+        currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
     }
     
     // - MARK: IBActions
