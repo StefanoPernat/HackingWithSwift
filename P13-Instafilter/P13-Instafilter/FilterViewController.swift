@@ -38,6 +38,13 @@ class FilterViewController: UIViewController {
     @IBAction func intensityChanged(_ sender: UISlider) {
     }
     
-    
+    func importPicture() {
+        let picker = UIImagePickerController()
+        
+        picker.allowsEditing = true
+        picker.delegate = self
+        
+        present(picker, animated: true)
+    }
 }
 
