@@ -57,13 +57,13 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBAction func changeFilter(sender: UIButton) {
         let chooseFilterAlertController = UIAlertController(title: "Choose filter", message: nil, preferredStyle: .actionSheet)
         
-        chooseFilterAlertController.addAction(UIAlertAction(title: "CIBumpDistortion", style: .default, handler: nil))
-        chooseFilterAlertController.addAction(UIAlertAction(title: "CIGaussianBlur", style: .default, handler: nil))
-        chooseFilterAlertController.addAction(UIAlertAction(title: "CIPixelate", style: .default, handler: nil))
-        chooseFilterAlertController.addAction(UIAlertAction(title: "CISepiaTone", style: .default, handler: nil))
-        chooseFilterAlertController.addAction(UIAlertAction(title: "CITwirlDistortion", style: .default, handler: nil))
-        chooseFilterAlertController.addAction(UIAlertAction(title: "CIUnsharpMask", style: .default, handler: nil))
-        chooseFilterAlertController.addAction(UIAlertAction(title: "CIVignette", style: .default, handler: nil))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CIBumpDistortion", style: .default, handler: setFilter))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CIGaussianBlur", style: .default, handler: setFilter))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CIPixelate", style: .default, handler: setFilter))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CISepiaTone", style: .default, handler: setFilter))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CITwirlDistortion", style: .default, handler: setFilter))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CIUnsharpMask", style: .default, handler: setFilter))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CIVignette", style: .default, handler: setFilter))
         chooseFilterAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         
@@ -96,6 +96,20 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             imageView.image = processedImage
         }
+    }
+    
+    func setFilter(action: UIAlertAction) {
+        guard currentImage != nil else {
+            return
+        }
+        
+        currentFilter = CIFilter(name: action.title!)
+        
+        let beginImage = CIImage(image: currentImage)
+        
+        currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        
+        applyProcessing()
     }
 }
 
