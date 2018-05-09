@@ -43,5 +43,7 @@
 	</array>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>We need to import photos</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need to access your photos</string>
 </dict>
 </plist>
