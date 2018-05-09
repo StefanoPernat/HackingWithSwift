@@ -118,6 +118,8 @@ Learned how to save data to UserDefaults making conform model class to:
 
 Played a little bit with CIContext and CIFilter, learned how to use some of the CIFilters and his inputKeys
 
+I also used UISlider
+
 #### Project XIII: Future edits
 
 - [ ] Instead of change filter, change button label to the name of the current filter
