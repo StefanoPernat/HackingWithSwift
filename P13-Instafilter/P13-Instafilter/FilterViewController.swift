@@ -89,6 +89,10 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func applyProcessing() {
+        guard currentImage != nil else {
+            return
+        }
+        
         currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey)
         
         if let cgImage = context.createCGImage(currentFilter.outputImage!, from: currentFilter.outputImage!.extent) {
