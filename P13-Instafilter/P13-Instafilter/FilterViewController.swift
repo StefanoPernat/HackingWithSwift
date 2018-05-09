@@ -55,7 +55,19 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     // - MARK: IBActions
     @IBAction func changeFilter(sender: UIButton) {
+        let chooseFilterAlertController = UIAlertController(title: "Choose filter", message: nil, preferredStyle: .actionSheet)
         
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CIBumpDistortion", style: .default, handler: nil))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CIGaussianBlur", style: .default, handler: nil))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CIPixelate", style: .default, handler: nil))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CISepiaTone", style: .default, handler: nil))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CITwirlDistortion", style: .default, handler: nil))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CIUnsharpMask", style: .default, handler: nil))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "CIVignette", style: .default, handler: nil))
+        chooseFilterAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        
+        present(chooseFilterAlertController, animated: true)
     }
     
     @IBAction func save(sender: UIButton) {
