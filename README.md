@@ -115,3 +115,12 @@ Learned how to save data to UserDefaults making conform model class to:
 - Codable (with the help of JSON encoder and decoder)
 
 ## Project XIII: Instafilter
+
+Played a little bit with CIContext and CIFilter, learned how to use some of the CIFilters and his inputKeys
+
+#### Project XIII: Future edits
+
+- [ ] Instead of change filter, change button label to the name of the current filter
+- [ ] Add a separate slider for radius input key
+- [ ] Fix crash if there no image in imageview and tapping save
+
