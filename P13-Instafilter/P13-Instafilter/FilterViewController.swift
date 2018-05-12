@@ -77,8 +77,16 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func save(sender: UIButton) {
+        guard let editedImage = imageView.image else {              // Future edits III: Fix save bug if there's no image selected
+            let noImageAlertController = UIAlertController(title: "Error", message: "Select an image before saving.", preferredStyle: .alert)
+            noImageAlertController.addAction(UIAlertAction(title: "OK", style: .default))
+            present(noImageAlertController, animated: true)
+
+            return
+        }
+        
         UIImageWriteToSavedPhotosAlbum(
-            imageView.image!,
+            editedImage,
             self,
             #selector(image(_:didFinishSavingWithError:contextInfo:)),
             nil
