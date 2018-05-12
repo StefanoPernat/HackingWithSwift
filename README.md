@@ -122,7 +122,7 @@ I also used UISlider
 
 #### Project XIII: Future edits
 
-- [ ] Instead of change filter, change button label to the name of the current filter
+- [x] Instead of change filter, change button label to the name of the current filter
 - [ ] Add a separate slider for radius input key
 - [ ] Fix crash if there no image in imageview and tapping save
 

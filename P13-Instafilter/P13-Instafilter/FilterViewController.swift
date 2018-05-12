@@ -13,12 +13,18 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
     // - MARK: Properties
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var intensity: UISlider!
+    @IBOutlet weak var changeFilter: UIButton!
+    
     
     var currentImage: UIImage!
     
     // - MARK: CoreImage properties
     var context: CIContext!
-    var currentFilter: CIFilter!
+    var currentFilter: CIFilter! {              // Future edits I: Change Change filter to the name of the current filter
+        didSet {
+            changeFilter.setTitle(currentFilter.name, for: .normal)
+        }
+    }
 
     // - MARK: view controller callback functions
     override func viewDidLoad() {
