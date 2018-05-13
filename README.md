@@ -123,6 +123,6 @@ I also used UISlider
 #### Project XIII: Future edits
 
 - [x] Instead of change filter, change button label to the name of the current filter
-- [ ] Add a separate slider for radius input key
+- [x] Add a separate slider for radius input key
 - [x] Fix crash if there no image in imageview and tapping save
 
