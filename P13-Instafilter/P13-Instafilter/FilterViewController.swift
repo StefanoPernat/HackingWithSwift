@@ -14,6 +14,7 @@ class FilterViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var intensity: UISlider!
     @IBOutlet weak var changeFilter: UIButton!
+    @IBOutlet weak var radius: UISlider!
     
     
     var currentImage: UIImage!
