@@ -126,3 +126,5 @@ I also used UISlider
 - [x] Add a separate slider for radius input key
 - [x] Fix crash if there no image in imageview and tapping save
 
+## Project XIV: Whack-a-Penguin
+
