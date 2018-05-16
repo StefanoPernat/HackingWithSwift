@@ -8,26 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		20ABA58E20AC1C0E00970B37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABA58D20AC1C0E00970B37 /* AppDelegate.swift */; };
-		20ABA59020AC1C0E00970B37 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA58F20AC1C0E00970B37 /* GameScene.sks */; };
-		20ABA59220AC1C0E00970B37 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA59120AC1C0E00970B37 /* Actions.sks */; };
 		20ABA59420AC1C0E00970B37 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABA59320AC1C0E00970B37 /* GameScene.swift */; };
 		20ABA59620AC1C0E00970B37 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABA59520AC1C0E00970B37 /* GameViewController.swift */; };
 		20ABA59920AC1C0E00970B37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA59720AC1C0E00970B37 /* Main.storyboard */; };
 		20ABA59B20AC1C0F00970B37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA59A20AC1C0F00970B37 /* Assets.xcassets */; };
 		20ABA59E20AC1C0F00970B37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA59C20AC1C0F00970B37 /* LaunchScreen.storyboard */; };
+		20ABA5A820AC1F0D00970B37 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA5A720AC1F0D00970B37 /* GameScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		20ABA58A20AC1C0E00970B37 /* P14-Whack-a-penguin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P14-Whack-a-penguin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20ABA58D20AC1C0E00970B37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20ABA58F20AC1C0E00970B37 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		20ABA59120AC1C0E00970B37 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		20ABA59320AC1C0E00970B37 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		20ABA59520AC1C0E00970B37 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		20ABA59820AC1C0E00970B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20ABA59A20AC1C0F00970B37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20ABA59D20AC1C0F00970B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20ABA59F20AC1C0F00970B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20ABA5A720AC1F0D00970B37 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +58,8 @@
 		20ABA58C20AC1C0E00970B37 /* P14-Whack-a-penguin */ = {
 			isa = PBXGroup;
 			children = (
+				20ABA5A720AC1F0D00970B37 /* GameScene.sks */,
 				20ABA58D20AC1C0E00970B37 /* AppDelegate.swift */,
-				20ABA58F20AC1C0E00970B37 /* GameScene.sks */,
-				20ABA59120AC1C0E00970B37 /* Actions.sks */,
 				20ABA59320AC1C0E00970B37 /* GameScene.swift */,
 				20ABA59520AC1C0E00970B37 /* GameViewController.swift */,
 				20ABA59720AC1C0E00970B37 /* Main.storyboard */,
@@ -131,11 +128,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20ABA5A820AC1F0D00970B37 /* GameScene.sks in Resources */,
 				20ABA59920AC1C0E00970B37 /* Main.storyboard in Resources */,
-				20ABA59020AC1C0E00970B37 /* GameScene.sks in Resources */,
 				20ABA59B20AC1C0F00970B37 /* Assets.xcassets in Resources */,
 				20ABA59E20AC1C0F00970B37 /* LaunchScreen.storyboard in Resources */,
-				20ABA59220AC1C0E00970B37 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
