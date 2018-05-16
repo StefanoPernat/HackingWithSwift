@@ -15,6 +15,7 @@
 		20ABA59E20AC1C0F00970B37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA59C20AC1C0F00970B37 /* LaunchScreen.storyboard */; };
 		20ABA5A820AC1F0D00970B37 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA5A720AC1F0D00970B37 /* GameScene.sks */; };
 		20ABA5AA20AC217F00970B37 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABA5A920AC217F00970B37 /* Helper.swift */; };
+		20ABA5AC20AC260F00970B37 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABA5AB20AC260F00970B37 /* WhackSlot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		20ABA59F20AC1C0F00970B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20ABA5A720AC1F0D00970B37 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		20ABA5A920AC217F00970B37 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		20ABA5AB20AC260F00970B37 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				20ABA59A20AC1C0F00970B37 /* Assets.xcassets */,
 				20ABA59C20AC1C0F00970B37 /* LaunchScreen.storyboard */,
 				20ABA59F20AC1C0F00970B37 /* Info.plist */,
+				20ABA5AB20AC260F00970B37 /* WhackSlot.swift */,
 			);
 			path = "P14-Whack-a-penguin";
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20ABA59420AC1C0E00970B37 /* GameScene.swift in Sources */,
+				20ABA5AC20AC260F00970B37 /* WhackSlot.swift in Sources */,
 				20ABA59620AC1C0E00970B37 /* WhackViewController.swift in Sources */,
 				20ABA58E20AC1C0E00970B37 /* AppDelegate.swift in Sources */,
 				20ABA5AA20AC217F00970B37 /* Helper.swift in Sources */,
