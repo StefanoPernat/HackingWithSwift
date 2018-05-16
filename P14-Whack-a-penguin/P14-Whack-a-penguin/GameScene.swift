@@ -12,6 +12,7 @@ import GameplayKit
 class GameScene: SKScene {
     // - MARK: Properties
     var slots = [WhackSlot]()
+    var popupTime = 0.85
     
     var gameScore: SKLabelNode!
     var score = 0 {
@@ -45,6 +46,10 @@ class GameScene: SKScene {
             createSlot(at: CGPoint(x: 180 + (i * 170), y: 320))
             createSlot(at: CGPoint(x: 180 + (i * 170), y: 140))
         }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [unowned self] in
+            self.createEnemy()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -59,5 +64,41 @@ class GameScene: SKScene {
         addChild(slot)
         
         slots.append(slot)
+    }
+    
+    func createEnemy() {
+        popupTime *= 0.991
+        
+        slots = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: slots) as! [WhackSlot]
+        
+        slots[0].show(popupTime)
+        
+        if RandomInt(min: 0, max: 12) > 4 {
+            slots[1].show(popupTime)
+        }
+        
+        if RandomInt(min: 0, max: 12) > 8 {
+            slots[2].show(popupTime)
+        }
+        
+        if RandomInt(min: 0, max: 12) > 10 {
+            slots[3].show(popupTime)
+        }
+        
+        if RandomInt(min: 0, max: 12) > 11 {
+            slots[4].show(popupTime)
+        }
+        
+        let minDelay = popupTime / 2.0
+        let maxDelay = popupTime * 2
+        let delay = RandomDouble(min: minDelay, max: maxDelay)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [unowned self] in
+            self.createEnemy()
+        }
+        
+        
+        
+        
     }
 }
