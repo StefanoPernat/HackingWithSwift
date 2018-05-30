@@ -13,6 +13,7 @@ class GameScene: SKScene {
     // - MARK: Properties
     var slots = [WhackSlot]()
     var popupTime = 0.85
+    var numRounds = 0
     
     var gameScore: SKLabelNode!
     var score = 0 {
@@ -53,7 +54,38 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        if let touch = touches.first {
+            let location = touch.location(in: self)
+            let tappedNodes = nodes(at: location)
+            
+            for node in tappedNodes {
+                if node.name == "charFriend" {
+                    // don't hit me
+                    let whackSlot = node.parent!.parent as! WhackSlot
+                    
+                    if !whackSlot.isVisible { continue }
+                    if !whackSlot.isHit { continue }
+                    
+                    whackSlot.hit()
+                    score -= 5
+                    run(SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion: false))
+                    
+                } else if node.name == "charEnemy" {
+                    // hit me
+                    let whackSlot = node.parent!.parent as! WhackSlot
+                    
+                    if !whackSlot.isVisible { continue }
+                    if whackSlot.isHit { continue }
+                    
+                    whackSlot.charNode.xScale = 0.85
+                    whackSlot.charNode.yScale = 0.85
+                    
+                    whackSlot.hit()
+                    score += 1
+                    run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
+                }
+            }
+        }
     }
     
     // - MARK: Functions
@@ -67,6 +99,21 @@ class GameScene: SKScene {
     }
     
     func createEnemy() {
+        numRounds += 1
+        
+        if numRounds >= 30 {
+            for slot in slots {
+                slot.hide()
+            }
+            
+            let gameOver = SKSpriteNode(imageNamed: "gameOver")
+            gameOver.position = CGPoint(x: 512, y: 384)
+            gameOver.zPosition = 1
+            addChild(gameOver)
+            
+            return
+        }
+        
         popupTime *= 0.991
         
         slots = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: slots) as! [WhackSlot]
