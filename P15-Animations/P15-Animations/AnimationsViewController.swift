@@ -43,7 +43,7 @@ class AnimationsViewController: UIViewController {
             animations: { [unowned self] in
             switch self.currentAnimation {
             case 0:
-                break
+                self.imageView.transform = CGAffineTransform(scaleX: 2, y: 2)
             default:
                 break
             }
