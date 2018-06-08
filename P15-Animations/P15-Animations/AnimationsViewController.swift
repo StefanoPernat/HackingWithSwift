@@ -10,6 +10,12 @@ import UIKit
 
 class AnimationsViewController: UIViewController {
 
+    // MARK: - Properties
+    
+    // MARK: - Outlets
+    @IBOutlet weak var tap: UIButton!
+    
+    // MARK: - ViewController callback methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +25,11 @@ class AnimationsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    // MARK: - Actions
+    @IBAction func tapped(_ sender: UIButton) {
+        
+    }
+    
 }
 
