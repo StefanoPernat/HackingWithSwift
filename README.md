@@ -132,4 +132,4 @@ Experienced GCD asyncAfter, tried to build something consistent with SpriteKit, 
 
 ## Project XV: Animations
 
-
+Played a little bit with animations
